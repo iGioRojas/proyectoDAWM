@@ -31,6 +31,9 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Nunito", sans-serif;
 }
 
+.header{
+    position: sticky;
+}
 /*--------------------------------------------------------------
 # Sections
 --------------------------------------------------------------*/
@@ -421,7 +424,7 @@ section {
 }
 @media (min-width: 1024px) {
   .hero {
-    background-attachment: fixed;
+    background-attachment: cover;
   }
 }
 @media (max-width: 991px) {
