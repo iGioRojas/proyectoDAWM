@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
+    <title>Registrar Auto</title>
     <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
 
@@ -21,7 +21,6 @@
 
   <!-- Template Main CSS File -->
   <link href="./css/style.css" rel="stylesheet">
-  <link href="./css/fondo.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: FlexStart - v1.7.0
@@ -43,7 +42,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto" href="index.html">Principal</a></li>
-          <li><a class="nav-link scrollto" href="./servicios.html">Servicio</a></li>
+          <li><a class="nav-link scrollto" href="index.html#about">Servicio</a></li>
           <li><a class="nav-link scrollto" href="">Seguimiento</a></li>
 		  <li><a class="nav-link scrollto" href="index.html#team">Equipo</a></li>
           <li><a class="nav-link scrollto" href="./noticias.html">Noticias</a></li>
@@ -52,46 +51,40 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
-
     </div>
   </header><!-- End Header -->
-      <!--  Inicio Sesion -->
-    <main class="hero d-flex justify-content-center">
-      <div class="rounded bg-light h-75 w-50 my-5 d-flex justify-content-center">
-        <form class="w-50 my-5">
-        <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
-    
-        <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
-        </div>
-        <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-        </div>
-    
-        <div class="checkbox mb-3">
-            <label>
-            <input type="checkbox" value="remember-me"> Recordarme
-            </label>
-        </div>
-        <div class="d-flex flex-row">
-            <button class="w-100 me-1 btn btn-secondary"><a class="text-light" href="./registro.html">Registrarse</a></button>
-        <button class="w-100 btn btn-primary" type="submit">Iniciar Sesión</button>
-        </div>
-        <a href="registroReparacion.html">Registro Reparación</a>
-        <hr>
-        <a href="registroAuto.html">Registro Auto</a>
-        </form>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Registro de automóvil</h1>
+        <p class="lead">Verifica que todos los datos proporcionados estén correctos</p>
+    </div>
+</div>
+<form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Tipo de automóvil</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Placa</label>
+      <input type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Año del automóvil</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Clave de llave</label>
+        <input type="password" class="form-control" id="exampleInputPassword1">
+        <div id="emailHelp" class="form-text">Solo si el auto tiene clave</div>
+    </div>
+    <button type="submit" class="btn btn-danger">Enviar</button>
+  </form>
+  <footer id="footer" class="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Grúas Yerovi</span></strong>. Todos los derechos reservados.
       </div>
-      </main>
-    <!--  Inicio Sesion -->
-    <footer id="footer" class="footer">
-      <div class="container">
-        <div class="copyright">
-          &copy; Copyright <strong><span>Grúas Yerovi</span></strong>. Todos los derechos reservados.
-        </div>
-      </div>
-    </footer><!-- End Footer -->
-</body>
-</html>
+    </div>
+  </footer><!-- End Footer -->
+  </body>
+  </html>
