@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: Helvetica, sans-serif;
   color: #444444;
 }
 
@@ -28,7 +28,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Nunito", sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 
 .header{
@@ -168,10 +168,10 @@ section {
 }
 .header .logo span {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 1px;
   color: #F8F2DC;
-  font-family: "Nunito", sans-serif;
+  font-family: Helvetica, sans-serif;
   margin-top: 3px;
 }
 
@@ -199,7 +199,7 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  font-family: "Nunito", sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 700;
   color: #F8F2DC;
@@ -403,7 +403,7 @@ section {
   text-align: center;
 }
 .hero .btn-get-started span {
-  font-family: "Nunito", sans-serif;
+  font-family: Helvetica, sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -488,7 +488,7 @@ section {
   background: #A93226;
 }
 .about .btn-read-more span {
-  font-family: "Nunito", sans-serif;
+  font-family: Helvetica, sans-serif;
   font-weight: 600;
   font-size: 16px;
   letter-spacing: 1px;
@@ -559,7 +559,7 @@ section {
 .counts .count-box p {
   padding: 0;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: Helvetica, sans-serif;
   font-size: 14px;
 }
 
@@ -858,7 +858,7 @@ section {
   transition: none;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Nunito", sans-serif;
+  font-family: Helvetica, sans-serif;
   font-weight: 600;
   transition: 0.3s;
   border: 1px solid #E8871E;
@@ -1422,6 +1422,11 @@ section {
   -webkit-animation: animate-loading 1s linear infinite;
   animation: animate-loading 1s linear infinite;
 }
+.contact .php-email-form label {
+  font-size: 16px;
+  color: #A93226;
+  font-weight: 600;
+}
 .contact .php-email-form input, .contact .php-email-form textarea, .contact .php-email-form select {
   border-radius: 0;
   box-shadow: none;
@@ -1962,14 +1967,14 @@ section {
   font-weight: 700;
   letter-spacing: 1px;
   color: #A93226;
-  font-family: "Nunito", sans-serif;
+  font-family: Helvetica, sans-serif;
   margin-top: 3px;
 }
 .footer .footer-top .footer-info p {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: Helvetica, sans-serif;
 }
 .footer .footer-top .social-links a {
   font-size: 20px;
