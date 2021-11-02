@@ -74,15 +74,9 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: #A93226;
+  background: #E8871E;
   min-height: 40px;
-  margin-top: 82px;
   color: #fff;
-}
-@media (max-width: 992px) {
-  .breadcrumbs {
-    margin-top: 57px;
-  }
 }
 .breadcrumbs h2 {
   font-size: 28px;
@@ -109,7 +103,7 @@ section {
 .breadcrumbs ol li + li::before {
   display: inline-block;
   padding-right: 10px;
-  color: #8894f6;
+  color: #A93226;
   content: "/";
 }
 
