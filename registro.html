@@ -1,60 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registro</title>
-      <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
-  <!-- Vendor CSS Files -->
-  <link href="./FlexStart-Plantilla/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="./FlexStart-Plantilla/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="./FlexStart-Plantilla/assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="./FlexStart-Plantilla/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="./FlexStart-Plantilla/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="./FlexStart-Plantilla/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link
+      href="./FlexStart-Plantilla/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./FlexStart-Plantilla/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./FlexStart-Plantilla/assets/vendor/aos/aos.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./FlexStart-Plantilla/assets/vendor/remixicon/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./FlexStart-Plantilla/assets/vendor/swiper/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="./FlexStart-Plantilla/assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- Template Main CSS File -->
-  <link href="./css/style.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="./css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/registro.css">
 
-  <!-- =======================================================
+
+    <!-- =======================================================
   * Template Name: FlexStart - v1.7.0
   * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
-</head>
-<body>
-      <!-- ======= Header ======= -->
-  <header id="header" class="header">
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+  </head>
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header">
+      <div class="container-fluid container-xl d-flex align-items-center justify-content-between"
+      >
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span>Grúas Yerovi</span>
+        </a>
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span>Grúas Yerovi</span>
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="index.html">Principal</a></li>
-          <li><a class="nav-link scrollto" href="index.html#about">Servicio</a></li>
-          <li><a class="nav-link scrollto" href="">Seguimiento</a></li>
-		  <li><a class="nav-link scrollto" href="index.html#team">Equipo</a></li>
-          <li><a class="nav-link scrollto" href="./noticias.html">Noticias</a></li>
-          <li><a class="nav-link scrollto" href="index.html#contact">Contacto</a></li>     
-          <li><a class="nav-link scrollto active" href="./inicio-sesion.html"><i class="bi fs-2 bi-person"></i></a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li>
+              <a class="nav-link scrollto" href="index.html">Principal</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="index.html#about">Servicio</a>
+            </li>
+            <li><a class="nav-link scrollto" href="">Seguimiento</a></li>
+            <li>
+              <a class="nav-link scrollto" href="index.html#team">Equipo</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="./noticias.html">Noticias</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto" href="index.html#contact">Contacto</a>
+            </li>
+            <li>
+              <a class="nav-link scrollto active" href="./inicio-sesion.html">
+                <i class="bi fs-2 bi-person"></i></a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+    <!-- Registro -->
+    <div class="container-fluid">
+    <div class="row">
+      <div class="col-4 offset-1">
+        <form class="mt-5">
+          <div>
+            <label for="inputNombre" class="form-label">Nombre</label>
+            <input
+              type="text"
+              required
+              class="form-control "
+              id="inputNombre"
+            />
+          </div>
+          <div>
+            <label for="inputEmail" class="form-label">Correo Electrónico</label>
+            <input
+              type="email"
+              required
+              class="form-control"
+              id="inputEmail"
+            />
+          </div>
+          <div>
+            <label for="inputPassword" class="form-label">Contraseña</label>
+            <input
+              type="password"
+              required
+              class="form-control"
+              id="inputPassword"
+            />
+          </div>
+          <div>
+            <label for="inputID" class="form-label">RUC o Cédula</label>
+            <input type="number" required class="form-control" id="inputID" />
+          </div>
+          <div class="col-md-6">
+            <label for="inputFecha" class="form-label"
+              >Fecha de Nacimiento</label
+            >
+            <input
+              type="date"
+              required
+              class="form-control"
+              id="inputFecha"
+            />
+          </div>
+          <div class="col-sm-12">
+            <button type="submit" class="btn btn-warning">Registrarse</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-7 px-0">
+        <img
+          class="img-fluid"
+          src="./assets/img/about.jpg"
+          alt="taller"
+        />
+      </div>
     </div>
-  </header><!-- End Header -->
-      </header><!-- End Header -->
-    
-</body>
+  </div>
+    <!-- End Registro -->
+    <!-- footer -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Grúas Yerovi</span></strong
+          >. Todos los derechos reservados.
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+  </body>
 </html>
