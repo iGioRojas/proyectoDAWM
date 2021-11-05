@@ -1,0 +1,45 @@
+/*Para el mapa*/
+#map { 
+    height: 400px;
+}
+
+#registro-grua {
+    margin: 5% auto;
+    height: 500px;
+    width: 500px;
+    /*margin: 10%;*/
+    border: 5px none transparent;
+    border-radius: 19px;
+}
+
+.enviar, #area-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.enviar, #area-nav, .detalle-ubicacion, .celular, .selector-vehiculo{
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.form-select {
+    display: inline;
+    width: 80%;
+}
+
+#pedirvan, #enviar-form {
+    background-color: #A93226;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 50px;
+    border: 1px solid;
+}
+
+.text-detalles {
+    width: 95%;
+}
+
+#footer {
+    margin-top: 10px;
+}
