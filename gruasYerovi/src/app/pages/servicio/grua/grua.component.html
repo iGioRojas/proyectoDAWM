@@ -1,0 +1,45 @@
+<app-nav></app-nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+      <h1 class="display-4">Servicio Grúas</h1>
+      <p class="lead">Grúas al instante</p>
+  </div>
+</div>
+
+<div id="registro-grua">
+  <!-- Seleccion -->
+  <div class="selector-vehiculo">
+      Vehículo:
+      <select class="form-select" aria-label="Disabled select example">
+          <option selected>Selecciona el vehículo</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+      </select>
+
+  </div>
+  <!-- end seleccion-->
+
+  <div class="celular">
+      <label>Celular:<input type="text" name="number"></label>
+  </div>
+
+  <div class="detalle-ubicacion">
+      Detalles sobre la ubicación:
+      <div>
+          <textarea class="text-detalles"></textarea>
+      </div>
+  </div>
+
+  <div id="area-nav">
+      <button id="pedirvan">Localizar</button>
+  </div>
+
+  <div id="map" ></div>
+
+  <div class="enviar">
+      <button id="enviar-form">Enviar</button>
+  </div>
+
+</div>
+<app-footer></app-footer>

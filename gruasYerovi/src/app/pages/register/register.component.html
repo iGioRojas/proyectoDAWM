@@ -1,0 +1,66 @@
+<app-nav></app-nav>
+<!-- Registro -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4 offset-1">
+      <form class="mt-5">
+        <div>
+          <label for="inputNombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            required
+            class="form-control "
+            id="inputNombre"
+          />
+        </div>
+        <div>
+          <label for="inputEmail" class="form-label">Correo Electrónico</label>
+          <input
+            type="email"
+            required
+            class="form-control"
+            id="inputEmail"
+          />
+        </div>
+        <div>
+          <label for="inputPassword" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            required
+            class="form-control"
+            id="inputPassword"
+          />
+          <div id="emailHelp" class="form-text mb-3">No comparta su contraseña</div>
+        </div>
+        <div>
+          <label for="inputID" class="form-label">RUC o Cédula</label>
+          <input type="number" required class="form-control" id="inputID" />
+        </div>
+        <div class="col-md-6">
+          <label for="inputFecha" class="form-label"
+            >Fecha de Nacimiento</label
+          >
+          <input
+            type="date"
+            required
+            class="form-control"
+            id="inputFecha"
+          />
+        </div>
+        <div class="col-sm-12">
+          <button type="submit" class="btn btn-warning">Registrarse</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-7 px-0">
+      <img
+        class="img-fluid"
+        src="./assets/img/about.jpg"
+        alt="taller"
+      />
+    </div>
+  </div>
+</div>
+<!-- End Registro -->
+<app-footer></app-footer>
+
