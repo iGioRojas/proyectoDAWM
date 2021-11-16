@@ -15,6 +15,7 @@ import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { GruaComponent } from './pages/servicio/grua/grua.component';
 import { MantenimientoComponent } from './pages/servicio/mantenimiento/mantenimiento.component';
 import { PromosComponent } from './pages/promos/promos.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { PromosComponent } from './pages/promos/promos.component';
     GruaComponent,
     MantenimientoComponent,
     PromosComponent,
+    PerfilComponent,
   ],
   imports: [
     BrowserModule,

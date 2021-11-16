@@ -9,8 +9,10 @@ import { GruaComponent } from './pages/servicio/grua/grua.component';
 import { MantenimientoComponent } from './pages/servicio/mantenimiento/mantenimiento.component';
 import { ServicioComponent } from './pages/servicio/servicio.component';
 import { PromosComponent } from './pages/promos/promos.component';
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 const routes: Routes = [
+  { path: 'perfil',component:PerfilComponent},
   { path: 'iniciarSesion', component: LoginComponent },
   { path: 'registro', component: RegisterComponent},
   { path: 'noticias', component: NoticiasComponent},
