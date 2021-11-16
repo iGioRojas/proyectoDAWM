@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
@@ -13,6 +14,7 @@ import { SeguimientoComponent } from './pages/seguimiento/seguimiento.component'
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { GruaComponent } from './pages/servicio/grua/grua.component';
 import { MantenimientoComponent } from './pages/servicio/mantenimiento/mantenimiento.component';
+import { PromosComponent } from './pages/promos/promos.component';
 
 
 @NgModule({
@@ -28,10 +30,12 @@ import { MantenimientoComponent } from './pages/servicio/mantenimiento/mantenimi
     NoticiasComponent,
     GruaComponent,
     MantenimientoComponent,
+    PromosComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
