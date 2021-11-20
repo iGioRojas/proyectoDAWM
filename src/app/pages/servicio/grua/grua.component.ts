@@ -23,7 +23,7 @@ export class GruaComponent implements OnInit {
     navigator.geolocation.getCurrentPosition((position)=>{
       const coords = position.coords;
       const latLong = [coords.latitude,coords.longitude];
-      let mymap = L.map('map').setView(latLong, 14);
+      let mymap = L.map('map').setView(latLong, 16);
       let marker = L.marker(latLong).addTo(mymap);
       L.tileLayer('https://{s}.tile.openstreetmap.de/{z}/{x}/{y}.png', {
           attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
