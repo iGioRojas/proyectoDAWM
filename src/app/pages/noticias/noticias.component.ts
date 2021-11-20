@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PromoService } from 'src/app/services/promo.service';
+import { Promo } from 'src/app/interfaces/promo';
 
 @Component({
   selector: 'app-noticias',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoticiasComponent implements OnInit {
 
-  constructor() { }
+  noticias:Promo[] = []
+  constructor(private promosService:PromoService) {
+  }
 
   ngOnInit(): void {
+    this.promosService.cargarPromos()
+    .subscribe(data => {
+       this.noticias = data;
+       console.log(this.noticias)
+    });
   }
 
 }

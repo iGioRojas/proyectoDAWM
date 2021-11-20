@@ -18,82 +18,28 @@
     <div class="container" data-aos="fade-up">
 
       <div class="row">
-
         <div class="col-lg-8 entries">
-
-          <article class="entry">
-
+          <!-- Creo un for con angular, recorro el arreglo de noticias -->
+          <article class="entry" *ngFor="let noticia of noticias;index as i">
             <div class="entry-img">
-              <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              <img [src]="noticia.img" alt="" class="img-fluid">
             </div>
 
             <h2 class="entry-title">
-              <a [routerLink]="['/promo',1]">Promoción Viaja Seguro Este Feriado</a>
+              <a [routerLink]="['/promo',(i+1)]">Promocion {{noticia.nombre}}</a>
             </h2>
 
             <div class="entry-meta">
               <ul>
-                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a [routerLink]="['/promo',1]"><time datetime="2021-11-01">Nov 1, 2021</time></a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a [routerLink]="['/promo',(i+1)]"><time datetime="2021-11-01">{{noticia.fechaInicio}}</time></a></li>
               </ul>
             </div>
 
             <div class="entry-content">
-              <p>
-                Tu seguridad es lo más importante para nosotros por lo que para este feriado tenemos una promoción para tí en donde te ofrecemos: ABC de frenos, reajuste de carrocería, revisión de presión de neumáticos, mantenimiento de batería, revisión de luces y un chequeo de las plumas del limpia parabrisas por solo <b>$27.99</b>.
-      </p>
+              <p>{{noticia.descripcion}}<b>{{noticia.precio}}</b>.
+              </p>
               <div class="read-more">
-                <a [routerLink]="['/promo',1]">Quiero esta promoción</a>
-              </div>
-            </div>
-          </article><!-- End blog entry -->
-
-          <article class="entry">
-            <div class="entry-img">
-              <img src="assets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-            </div>
-
-            <h2 class="entry-title">
-              <a [routerLink]="['/promo',2]">Promoción Mantenimiento Express</a>
-            </h2>
-
-            <div class="entry-meta">
-              <ul>
-                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a [routerLink]="['/promo',2]"><time datetime="2021-10-20">Oct 20, 2021</time></a></li>
-              </ul>
-            </div>
-
-            <div class="entry-content">
-              <p>
-        Sabemos que como cliente no siempre tienes tiempo, por lo que en esta ocasión tenemos la promoción de mantenimiento express en donde te realizamos: cambio de aceite, filtro de motor, reajuste de suspensión y te regalamos el servicio de lavado express, chequeo de filtros y bujías y revisión de fluidos. Todo por <b>$34.99</b>.
-      </p>
-              <div class="read-more">
-                <a [routerLink]="['/promo',2]">Quiero esta promoción</a>
-              </div>
-            </div>
-          </article><!-- End blog entry -->
-
-          <article class="entry">
-
-            <div class="entry-img">
-              <img src="assets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-            </div>
-
-            <h2 class="entry-title">
-              <a [routerLink]="['/promo',3]">Promoción Cambio de Aceite y Filtro</a>
-            </h2>
-
-            <div class="entry-meta">
-              <ul>
-                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a [routerLink]="['/promo',3]"><time datetime="2021-10-10">Oct 10, 2021</time></a></li>
-              </ul>
-            </div>
-
-            <div class="entry-content">
-              <p>
-                Dentro de esta promoción te ofrecemos el cambio de aceite (de las mejores marcas) y cambio de filtro de aceite, y no solo eso sino que también te regalamos el chequeo de niveles, análisis de fluidos, revisión de luces, revisión de presión de neumáticos y un lavado express. Todo esto por <b>$26.99</b>.
-      </p>
-              <div class="read-more">
-                <a [routerLink]="['/promo',3]">Quiero esta promoción</a>
+                <a [routerLink]="['/promo',(i+1)]">Quiero esta promoción</a>
               </div>
             </div>
           </article><!-- End blog entry -->
@@ -109,7 +55,7 @@
         <div class="col-lg-4">
 
           <div class="sidebar">
-
+            <!-- Añadir pipe -->
             <h3 class="sidebar-title">Buscar</h3>
             <div class="sidebar-item search-form">
               <form action="">
@@ -120,22 +66,10 @@
 
             <h3 class="sidebar-title">Promociones activas</h3>
             <div class="sidebar-item recent-posts">
-              <div class="post-item clearfix">
-                <img src="assets/img/blog/blog-1.jpg" alt="">
-                <h4><a [routerLink]="['/promo',1]">Promoción Viaja Seguro Este Feriado</a></h4>
-                <time datetime="2020-01-01">Nov 1, 2021</time>
-              </div>
-
-              <div class="post-item clearfix">
-                <img src="assets/img/blog/blog-2.jpg" alt="">
-                <h4><a [routerLink]="['/promo',2]">Promoción Mantenimiento Express</a></h4>
-                <time datetime="2020-01-01">Oct 20, 2021</time>
-              </div>
-
-              <div class="post-item clearfix">
-                <img src="assets/img/blog/blog-3.jpg" alt="">
-                <h4><a [routerLink]="['/promo',3]">Promoción Cambio de Aceite y Filtro</a></h4>
-                <time datetime="2020-01-01">Oct 10, 2021</time>
+              <div class="post-item clearfix" *ngFor="let promocion of noticias;index as i">
+                <img [src]="promocion.img" alt="">
+                <h4><a [routerLink]="['/promo',(i+1)]">Promoción {{promocion.nombre}}</a></h4>
+                <time datetime="2020-01-01">{{promocion.fechaInicio}}</time>
               </div>
             </div><!-- End sidebar recent posts-->
           </div><!-- End sidebar -->
