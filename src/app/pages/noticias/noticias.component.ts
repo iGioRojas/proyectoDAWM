@@ -8,7 +8,7 @@ import { Promo } from 'src/app/interfaces/promo';
   styleUrls: ['./noticias.component.css']
 })
 export class NoticiasComponent implements OnInit {
-
+  filtroNoticias = ""
   noticias:Promo[] = []
   constructor(private promosService:PromoService) {
   }
@@ -17,7 +17,6 @@ export class NoticiasComponent implements OnInit {
     this.promosService.cargarPromos()
     .subscribe(data => {
        this.noticias = data;
-       console.log(this.noticias)
     });
   }
 

@@ -20,18 +20,18 @@
       <div class="row">
         <div class="col-lg-8 entries">
           <!-- Creo un for con angular, recorro el arreglo de noticias -->
-          <article class="entry" *ngFor="let noticia of noticias;index as i">
+          <article class="entry" *ngFor="let noticia of noticias |noticiasFiltro:filtroNoticias">
             <div class="entry-img">
               <img [src]="noticia.img" alt="" class="img-fluid">
             </div>
 
             <h2 class="entry-title">
-              <a [routerLink]="['/promo',(i+1)]">Promocion {{noticia.nombre}}</a>
+              <a [routerLink]="['/promo',noticia.id]">Promocion {{noticia.nombre}}</a>
             </h2>
 
             <div class="entry-meta">
               <ul>
-                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a [routerLink]="['/promo',(i+1)]"><time datetime="2021-11-01">{{noticia.fechaInicio}}</time></a></li>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a [routerLink]="['/promo',noticia.id]"><time datetime="2021-11-01">{{noticia.fechaInicio}}</time></a></li>
               </ul>
             </div>
 
@@ -39,7 +39,7 @@
               <p>{{noticia.descripcion}}<b>{{noticia.precio}}</b>.
               </p>
               <div class="read-more">
-                <a [routerLink]="['/promo',(i+1)]">Quiero esta promoción</a>
+                <a [routerLink]="['/promo',noticia.id]">Quiero esta promoción</a>
               </div>
             </div>
           </article><!-- End blog entry -->
@@ -59,7 +59,7 @@
             <h3 class="sidebar-title">Buscar</h3>
             <div class="sidebar-item search-form">
               <form action="">
-                <input type="text">
+                <input type="text"  placeholder = "Buscar..." name="filtroNoticias" [(ngModel)] = "filtroNoticias">
                 <button type="submit"><i class="bi bi-search"></i></button>
               </form>
             </div><!-- End sidebar search formn-->
