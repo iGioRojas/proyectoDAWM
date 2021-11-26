@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,6 +15,8 @@ import { GruaComponent } from './pages/servicio/grua/grua.component';
 import { MantenimientoComponent } from './pages/servicio/mantenimiento/mantenimiento.component';
 import { PromosComponent } from './pages/promos/promos.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { NoticiasPipe } from './pipes/noticias.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,11 +34,13 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     MantenimientoComponent,
     PromosComponent,
     PerfilComponent,
+    NoticiasPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
