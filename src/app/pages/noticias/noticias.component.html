@@ -26,7 +26,7 @@
             </div>
 
             <h2 class="entry-title">
-              <a [routerLink]="['/promo',noticia.id]">Promocion {{noticia.nombre}}</a>
+              <a [routerLink]="['/promo',noticia.id]"> {{noticia.nombre}}</a>
             </h2>
 
             <div class="entry-meta">
@@ -68,7 +68,7 @@
             <div class="sidebar-item recent-posts">
               <div class="post-item clearfix" *ngFor="let promocion of noticias;index as i">
                 <img [src]="promocion.img" alt="">
-                <h4><a [routerLink]="['/promo',(i+1)]">Promoción {{promocion.nombre}}</a></h4>
+                <h4><a [routerLink]="['/promo',(i+1)]"> {{promocion.nombre}}</a></h4>
                 <time datetime="2020-01-01">{{promocion.fechaInicio}}</time>
               </div>
             </div><!-- End sidebar recent posts-->
