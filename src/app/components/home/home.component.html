@@ -2,6 +2,7 @@
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero d-flex align-items-center">
 
+  <h1 data-aos="fade-up" id="ayuda" (click)="empezarGuia()">Ayuda <i class="bi bi-question-circle-fill"></i></h1>
   <div class="container">
     <div class="row">
       <div class="col-lg-12 d-flex flex-column justify-content-center">
@@ -9,7 +10,7 @@
         <h2 data-aos="fade-up" data-aos-delay="400">Reparamos tu vehículo e incluímos servicio de grúas</h2>
         <div data-aos="fade-up" data-aos-delay="600">
           <div class="text-center ">
-            <a [routerLink]="['iniciarSesion']" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+            <a [routerLink]="['iniciarSesion']" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" id="step1">
               <span>Pide el servicio</span>
               <i class="bi bi-arrow-right"></i>
             </a>
@@ -58,7 +59,7 @@
         <p>Estos son nuestros servicios</p>
       </header>
 
-      <div class="row">
+      <div id="step3" class="row">
 
         <div class="col-lg-4">
           <div class="box" data-aos="fade-up" data-aos-delay="200">
@@ -266,8 +267,8 @@
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <form action="forms/contact.php" method="post" class="php-email-form">
+        <div  class="col-lg-6">
+          <form id = "step4" action="forms/contact.php" method="post" class="php-email-form">
             <div class="row gy-4">
 
               <div class="col-md-6">

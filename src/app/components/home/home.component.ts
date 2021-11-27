@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IntrojsService } from 'src/app/services/introjs.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private introService: IntrojsService) { }
 
   ngOnInit(): void {
+  }
+
+  empezarGuia(){
+    this.introService.featureOne();
   }
 
 }
