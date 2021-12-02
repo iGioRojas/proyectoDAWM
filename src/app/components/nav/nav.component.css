@@ -12,4 +12,8 @@
     font-size: 30px;
 
   }
+
+  a>span{
+    font-size: 1.3em;
+  }
 }

@@ -1,0 +1,59 @@
+.profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+img{
+  height: 20em;
+  width: 20em;
+}
+
+.matrix{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  justify-content: space-evenly;
+  gap: 10px;
+  margin: 40px;
+}
+
+#registroVehi, #registroRepa{
+  height: 20vh;
+  background-color: #941e1e;
+  border-radius: 10px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  cursor: pointer;
+}
+
+#registroVehi{
+  grid-column: 2/4;
+}
+
+#registroRepa{
+  grid-column: 4/6
+}
+
+ a{
+  color:whitesmoke;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#registroVehi:hover{
+  box-shadow: rgba(0, 0, 0) 0px 0px 0px 3px;
+}
+#registroRepa:hover{
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 3px;
+}
+
+@media screen and (max-width:700px) {
+  .matrix{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin: 40px;
+  }
+}

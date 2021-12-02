@@ -9,14 +9,15 @@ import * as d3 from 'd3';
 export class PerfilComponent implements OnInit {
 
   private data = [
-    {"Year": "2019", "Customer": "166443", "Released": "100000"},
-    {"Year": "2020", "Customer": "150793", "Released": "0"},
-    {"Year": "2021", "Customer": "62342", "Released": "0"},
+    {"Year": "2019", "Customer": "700", "Released": "100000"},
+    {"Year": "2020", "Customer": "100", "Released": "0"},
+    {"Year": "2021", "Customer": "350", "Released": "0"},
   ];
   private svg:any;
   private margin = 50;
-  private width = 750 - (this.margin * 2);
+  private width = 550 - (this.margin * 2);
   private height = 400 - (this.margin * 2);
+  active = "";
   constructor() { }
 
   ngOnInit(): void {
@@ -50,7 +51,7 @@ export class PerfilComponent implements OnInit {
 
     // Create the Y-axis band scale
     const y = d3.scaleLinear()
-    .domain([0, 200000])
+    .domain([0, 1000])
     .range([this.height, 0]);
 
     // Draw the Y-axis on the DOM
@@ -67,5 +68,9 @@ export class PerfilComponent implements OnInit {
     .attr("width", x.bandwidth())
     .attr("height", (d: { Customer: d3.NumberValue; }) => this.height - y(d.Customer))
     .attr("fill", "#E56416");
+  }
+
+  enfasis(){
+    this.active = "bg-warning"
   }
 }

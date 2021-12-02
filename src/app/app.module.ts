@@ -17,6 +17,8 @@ import { PromosComponent } from './pages/promos/promos.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { NoticiasPipe } from './pipes/noticias.pipe';
 import { FormsModule } from '@angular/forms';
+import { MecanicoComponent } from './pages/mecanico/mecanico.component';
+import { ClienteComponent } from './pages/cliente/cliente.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { FormsModule } from '@angular/forms';
     PromosComponent,
     PerfilComponent,
     NoticiasPipe,
+    MecanicoComponent,
+    ClienteComponent,
   ],
   imports: [
     BrowserModule,

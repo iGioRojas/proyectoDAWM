@@ -10,6 +10,8 @@ import { MantenimientoComponent } from './pages/servicio/mantenimiento/mantenimi
 import { ServicioComponent } from './pages/servicio/servicio.component';
 import { PromosComponent } from './pages/promos/promos.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { ClienteComponent } from './pages/cliente/cliente.component';
+import { MecanicoComponent } from './pages/mecanico/mecanico.component';
 
 const routes: Routes = [
   { path: 'perfil',component:PerfilComponent},
@@ -21,8 +23,10 @@ const routes: Routes = [
   { path: 'servicio', component: ServicioComponent},
   { path: 'servicio-grua', component:GruaComponent},
   { path: 'servicio-mantenimiento', component:MantenimientoComponent},
+  { path: 'cliente',component:ClienteComponent},
+  { path: 'mecanico',component:MecanicoComponent},
   { path: '', component: HomeComponent },
-  { path: '**', pathMatch:'full', redirectTo: '' }
+  { path: '**', pathMatch:'full', redirectTo: '' },
 ];
 
 @NgModule({

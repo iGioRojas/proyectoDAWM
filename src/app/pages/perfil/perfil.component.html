@@ -1,34 +1,29 @@
 <app-nav></app-nav>
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <nav class="bg-light">
       <div class="pt-3">
-        <ul class="nav flex-column">
+        <ul class="nav flex">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link"  href="perfil" (click)="enfasis()">
               <i class="bi bi-file-earmark-bar-graph"></i>
               Resumen
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['./']" fragment="registros">
+            <a class="nav-link" href="perfil#registros">
               <i class="bi bi-file-text"></i>
               Últimos registros
             </a>
           </li>
-        </ul>
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-          <span>Acciones de registro</span>
-        </h6>
-        <ul class="nav flex-column mb-2">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" [routerLink]="['/registro']">
               <i class="bi bi-tools"></i>
               Registrar Mecánico
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" [routerLink]="['/registro']">
               <i class="bi bi-truck-flatbed"></i>
               Registrar Conductor
             </a>
@@ -37,13 +32,13 @@
       </div>
     </nav>
 
-    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <main class=" px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Bienvenido Administrador!</h1>
       </div>
 
       <h3>Clientes por año</h3>
-      <figure id="bar" ></figure>
+      <figure class="col-sm-12" id="bar" [ngClass]="active"></figure>
       <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
 
       <h2 id="registros">Últimos registros</h2>
