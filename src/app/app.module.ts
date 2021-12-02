@@ -9,7 +9,6 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { ServicioComponent } from './pages/servicio/servicio.component';
-import { SeguimientoComponent } from './pages/seguimiento/seguimiento.component';
 import { NoticiasComponent } from './pages/noticias/noticias.component';
 import { GruaComponent } from './pages/servicio/grua/grua.component';
 import { MantenimientoComponent } from './pages/servicio/mantenimiento/mantenimiento.component';
@@ -21,6 +20,7 @@ import { MecanicoComponent } from './pages/mecanico/mecanico.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { RegistroMecanicoComponent } from './pages/mecanico/registro-mecanico/registro-mecanico.component';
 import { RegistrarVehiculoComponent } from './pages/mecanico/registrar-vehiculo/registrar-vehiculo.component';
+import { SeguimientoComponent } from './pages/seguimiento/seguimiento.component';
 
 
 @NgModule({
