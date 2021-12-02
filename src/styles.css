@@ -201,10 +201,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0 10px 30px;
+  padding: 10px;
   font-family: Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: 700;
   color: #F8F2DC;
   white-space: nowrap;
   transition: 0.3s;

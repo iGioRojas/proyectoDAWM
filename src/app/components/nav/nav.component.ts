@@ -7,18 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-
+  active = "";
+  cerrar = "";
   constructor() { }
 
   ngOnInit(): void {
 
   }
 
+  mobile(){
+    if(this.active == ""){
+       this.active = "navbar-mobile";
+       this.cerrar = "bi-x"
+    }else{
+       this.active = "";
+       this.cerrar = "bi bi-list";
+    }
+  }
 
 
 
-}
-function all(all: any) {
-  throw new Error('Function not implemented.');
+
+
 }
 
