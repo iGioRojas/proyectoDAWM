@@ -19,6 +19,8 @@ import { NoticiasPipe } from './pipes/noticias.pipe';
 import { FormsModule } from '@angular/forms';
 import { MecanicoComponent } from './pages/mecanico/mecanico.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
+import { RegistroMecanicoComponent } from './pages/mecanico/registro-mecanico/registro-mecanico.component';
+import { RegistrarVehiculoComponent } from './pages/mecanico/registrar-vehiculo/registrar-vehiculo.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
     NoticiasPipe,
     MecanicoComponent,
     ClienteComponent,
+    RegistroMecanicoComponent,
+    RegistrarVehiculoComponent,
   ],
   imports: [
     BrowserModule,

@@ -12,6 +12,8 @@ import { PromosComponent } from './pages/promos/promos.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { MecanicoComponent } from './pages/mecanico/mecanico.component';
+import { RegistroMecanicoComponent } from './pages/mecanico/registro-mecanico/registro-mecanico.component';
+import { RegistrarVehiculoComponent } from './pages/mecanico/registrar-vehiculo/registrar-vehiculo.component';
 
 const routes: Routes = [
   { path: 'perfil',component:PerfilComponent},
@@ -25,6 +27,8 @@ const routes: Routes = [
   { path: 'servicio-mantenimiento', component:MantenimientoComponent},
   { path: 'cliente',component:ClienteComponent},
   { path: 'mecanico',component:MecanicoComponent},
+  { path: 'registromecanico',component:RegistroMecanicoComponent},
+  { path: 'registrarvehiculo',component:RegistrarVehiculoComponent},
   { path: '', component: HomeComponent },
   { path: '**', pathMatch:'full', redirectTo: '' },
 ];
