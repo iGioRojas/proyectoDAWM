@@ -1,0 +1,37 @@
+<app-nav></app-nav>
+<div class="container">
+    <h1 class="display-4">Ingrese los siguientes datos:</h1>
+    <p class="lead">Los datos proporcionado son para una atención personalizada.</p>
+<div class="p-5">
+  <mat-horizontal-stepper [labelPosition]="'bottom'">
+    <ng-template matStepperIcon="edit">
+      <mat-icon><i class="bi bi-check-lg"></i></mat-icon>
+    </ng-template>
+    <mat-step label="Paso 1">
+      <div>
+        <label for="modelo">Ingrese el modelo de auto:</label><br>
+        <input type="text" name="modelo" id="modelo">
+        <button type="button" class="btn btn-info d-block mt-3" matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step label="Paso 2">
+      <div>
+        <label for="placa">Ingrese la placa:</label><br>
+        <input type="text" name="placa" id="placa"><br>
+        <button type="button" class="btn btn-info mt-3" matStepperPrevious>Atrás</button>
+        <button type="button" class="btn btn-info mx-3 mt-3" matStepperNext>Siguiente</button>
+      </div>
+    </mat-step>
+    <mat-step label="Paso 3">
+      <div>
+        <label for="placa">¿Qué desea?</label><br>
+        <textarea name="placa" id="placa" cols="40" rows="7"></textarea><br>
+        <button type="button" class="btn btn-info mt-3" matStepperPrevious>Atrás</button>
+        <button type="button" class="btn btn-info mx-3 mt-3" matStepperNext (click)="enviar()">Enviar</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+  <div id = "complete"></div>
+</div>
+</div>
+<app-footer></app-footer>

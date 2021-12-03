@@ -23,6 +23,10 @@ import { RegistrarVehiculoComponent } from './pages/mecanico/registrar-vehiculo/
 import { SeguimientoComponent } from './pages/seguimiento/seguimiento.component';
 import { ModalComponent, NgbdModalComponent} from './pages/modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatStepperModule } from '@angular/material/stepper';
+import { SolicitarTallerComponent } from './pages/cliente/solicitar-taller/solicitar-taller.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -47,13 +51,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     RegistrarVehiculoComponent,
     ModalComponent,
     NgbdModalComponent,
+    SolicitarTallerComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    BrowserAnimationsModule,
+    MatStepperModule,
+    MatIconModule,
   ],
   entryComponents:[NgbdModalComponent],
   providers: [],

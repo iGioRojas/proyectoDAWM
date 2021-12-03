@@ -33,6 +33,8 @@ export class GruaComponent implements OnInit {
           zoomOffset: -1,
           accessToken: 'your.mapbox.access.token'
       }).addTo(mymap);
+      let div:HTMLElement = document.getElementById("ubicacion") as HTMLElement;
+      div.innerHTML = `Su ubicación es : ${latLong}`
     });
   }
 }

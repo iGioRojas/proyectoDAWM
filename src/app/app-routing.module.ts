@@ -14,6 +14,7 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
 import { MecanicoComponent } from './pages/mecanico/mecanico.component';
 import { RegistroMecanicoComponent } from './pages/mecanico/registro-mecanico/registro-mecanico.component';
 import { RegistrarVehiculoComponent } from './pages/mecanico/registrar-vehiculo/registrar-vehiculo.component';
+import { SolicitarTallerComponent } from './pages/cliente/solicitar-taller/solicitar-taller.component';
 
 const routes: Routes = [
   { path: 'perfil',component:PerfilComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'noticias', component: NoticiasComponent},
   { path: 'promo/:id', component: PromosComponent },
   { path: 'seguimiento', component: SeguimientoComponent},
+  { path: 'servicioTaller', component:SolicitarTallerComponent},
   { path: 'servicio', component: ServicioComponent},
   { path: 'servicio-grua', component:GruaComponent},
   { path: 'servicio-mantenimiento', component:MantenimientoComponent},
