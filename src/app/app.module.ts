@@ -21,6 +21,8 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
 import { RegistroMecanicoComponent } from './pages/mecanico/registro-mecanico/registro-mecanico.component';
 import { RegistrarVehiculoComponent } from './pages/mecanico/registrar-vehiculo/registrar-vehiculo.component';
 import { SeguimientoComponent } from './pages/seguimiento/seguimiento.component';
+import { ModalComponent, NgbdModalComponent} from './pages/modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -43,13 +45,17 @@ import { SeguimientoComponent } from './pages/seguimiento/seguimiento.component'
     ClienteComponent,
     RegistroMecanicoComponent,
     RegistrarVehiculoComponent,
+    ModalComponent,
+    NgbdModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgbModule
   ],
+  entryComponents:[NgbdModalComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
