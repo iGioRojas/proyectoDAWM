@@ -12,7 +12,7 @@ import {NgbModal, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
       </button>
     </div>
     <div class="modal-body">
-      <p>Hola cliente, el mecánico a dicho lo siguiente:</p>
+      <p>Hola cliente, el mecánico ha dicho lo siguiente:</p>
       <p>{{name}}</p>
       <p><strong>Fecha y hora: </strong>2/11/2021 - 13:00</p>
       <p><strong>Mecánico: </strong>Joel Choez</p>
