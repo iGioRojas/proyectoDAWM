@@ -5,12 +5,21 @@
     <div class="col-4 offset-1">
       <form class="mt-5">
         <div>
-          <label for="inputNombre" class="form-label">Nombre</label>
+          <label for="inputNombre" class="form-label">Nombres</label>
           <input
             type="text"
             required
             class="form-control "
             id="inputNombre"
+          />
+        </div>
+        <div>
+          <label for="inputApellido" class="form-label">Apellidos</label>
+          <input
+            type="text"
+            required
+            class="form-control "
+            id="inputApellido"
           />
         </div>
         <div>
@@ -33,7 +42,7 @@
           <div id="emailHelp" class="form-text mb-3">No comparta su contraseña</div>
         </div>
         <div>
-          <label for="inputID" class="form-label">RUC o Cédula</label>
+          <label for="inputID" class="form-label">Cédula</label>
           <input type="number" required class="form-control" id="inputID" />
         </div>
         <div class="col-md-6">
@@ -46,6 +55,23 @@
             class="form-control"
             id="inputFecha"
           />
+        </div>
+        <div>
+          <label for="provincia">Provincia:</label>
+          <select name="provincia" id="provincia" [(ngModel)]="valorProvincia" (change)="seleCiudad()">
+            <option [value]="provincia" *ngFor="let provincia of provincias;index as i">{{provincia}}</option>
+          </select>
+        </div>
+        <div>
+          <label for="ciudad">Ciudad</label>
+          <select name="ciudad" id="ciudad">
+            <option value="default" selected>Seleccione una ciudad</option>
+            <option [value]="ciudad" *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+          </select>
+        </div>
+        <div>
+          <label for="idCelular" class="form-label">Número de Celular</label>
+          <input type="number" required class="form-control" id="idCelular" />
         </div>
         <div class="col-sm-12">
           <button type="submit" class="btn btn-warning">Registrarse</button>
