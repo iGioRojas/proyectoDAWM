@@ -16,16 +16,17 @@
     </mat-step>
     <mat-step label="Paso 2">
       <div>
-        <label for="placa">Ingrese la placa:</label><br>
-        <input type="text" name="placa" id="placa"><br>
+        <label for="descripcion">Escriba el motivo de atención</label><br>
+        <textarea name="descripcion" id="descripcion" cols="30" rows="10"></textarea><br>
         <button type="button" class="btn btn-info mt-3" matStepperPrevious>Atrás</button>
         <button type="button" class="btn btn-info mx-3 mt-3" matStepperNext>Siguiente</button>
       </div>
     </mat-step>
     <mat-step label="Paso 3">
       <div>
-        <label for="placa">¿Qué desea?</label><br>
-        <textarea name="placa" id="placa" cols="40" rows="7"></textarea><br>
+        <label for="placa">¿Quiere que vayamos a ver su auto?</label><br>
+        <label for="si">Sí</label><input type="radio" name="domicilio" value="Si">
+        <label for="no">No</label><input type="radio" name="domicilio" value="No"><br>
         <button type="button" class="btn btn-info mt-3" matStepperPrevious>Atrás</button>
         <button type="button" class="btn btn-info mx-3 mt-3" matStepperNext (click)="enviar()">Enviar</button>
       </div>
