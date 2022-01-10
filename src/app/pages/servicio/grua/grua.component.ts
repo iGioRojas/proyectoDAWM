@@ -10,6 +10,7 @@ declare const L:any;
 export class GruaComponent implements OnInit {
 
   title = 'locationApp'
+  ClienteLogueado:boolean = false;
 
   constructor() { }
 

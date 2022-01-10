@@ -7,31 +7,64 @@
 </div>
 
 <div id="registro-grua">
-  <!-- Seleccion -->
-  <div class="selector-vehiculo">
-    <label for="vehiculo">Vehículo:</label>
-    <input type="text" name="vehiculo" id="vehiculo" />
-  </div>
-  <!-- end seleccion-->
+  <div class="container">
+    <form action="">
+      <div class="row" *ngIf="ClienteLogueado">
+        <div class="personal col-sm">
+        <h2>Información Personal</h2>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre">
+        <label for="apellido">Apellido</label>
+        <input type="text" id="apellido">
+        <label for="cedula">Cédula</label>
+        <input type="text" id="cedula">
+        <label for="celular">Celular</label>
+        <input type="number" placeholder= "+593 123456789" id="celular">
+      </div>
 
-  <div class="celular">
-    <label>Celular:<input type="text" name="number" /></label>
-  </div>
+      <div class="col-sm vehiculo">
+        <h2>Información Vehículo</h2>
 
-  <div class="detalle-ubicacion">
-    <label for="detalles">Detalles sobre la ubicación:</label>
-    <textarea class="text-detalles" name="detalles" id="detalles"></textarea>
-  </div>
+        <label for="placa">Placa</label>
+        <input type="text" name="placa" id="placa" />
 
-  <div id="area-nav">
-    <button id="pedirvan" (click)="localizar()">Localizar</button>
-  </div>
+        <label>Marca</label>
+        <input type="text" name="text" />
+        <label>Modelo</label>
+        <input type="text" name="text" />
+        <label>Color</label>
+        <input type="text" name="text" />
+      </div>
+      </div>
 
-  <div id="map"><p>El mapa aparece después de los permisos</p></div>
+      <div *ngIf="!ClienteLogueado">
 
-  <div class="enviar">
-    <button id="enviar-form">Enviar</button>
-  </div>
-  <div id="ubicacion" class="my-3"></div>
+        <select name="auto" id="auto">
+        <option value="default" selected>Seleccione su auto</option>
+        <option value="1">Auto1</option>
+        <option value="2">Auto2</option>
+        </select>
+      </div>
+      <div class="detalles">
+      <label for="detalles">Detalles sobre la ubicación</label>
+      <textarea
+        class="text-detalles"
+        name="detalles"
+        id="detalles"
+      ></textarea>
+    </div>
+
+
+      <div id="area-nav">
+        <button id="pedirvan" (click)="localizar()">Localizar</button>
+      </div>
+
+      <div id="map"><p>El mapa aparece después de los permisos</p></div>
+
+      <div class="enviar">
+        <button id="enviar-form">Enviar</button>
+      </div>
+      <div id="ubicacion" class="my-3"></div>
+  </form>
 </div>
 <app-footer></app-footer>

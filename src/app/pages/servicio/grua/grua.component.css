@@ -1,9 +1,3 @@
-#registro-grua {
-  margin: 5% auto;
-  height: 500px;
-  width: 500px;
-}
-
 #map{
   background-color: #3b3b3b;
   height: 300px;
@@ -11,7 +5,23 @@
   text-align: center;
   padding: 5em 0px;
 }
+.personal{
+  display: flex;
+  flex-direction: column;
+}
 
+.personal>label{
+  margin-top: 20px;
+}
+
+.vehiculo{
+  display: flex;
+  flex-direction: column;
+}
+
+.vehiculo>label{
+  margin-top: 20px;
+}
 .enviar, #area-nav {
   display: flex;
   align-items: center;
@@ -35,4 +45,7 @@
 .text-detalles {
   width: 100%;
 }
+ .detalles{
+   margin: 20px 0px;
+ }
 
