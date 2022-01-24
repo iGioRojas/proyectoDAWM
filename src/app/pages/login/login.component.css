@@ -1,7 +1,8 @@
 .error{
   margin: 10px;
-  background-color: rgb(235, 78, 78);
-  color:rgb(132, 16, 16);
+  background-color: rgb(231, 63, 63);
+  color:rgb(255, 255, 255);
   border-radius: 5px;
   padding: 4px 4px 0px 4px;
+  text-shadow: 2px 2px black;
 }
