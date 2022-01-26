@@ -27,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatStepperModule } from '@angular/material/stepper';
 import { SolicitarTallerComponent } from './pages/cliente/solicitar-taller/solicitar-taller.component';
 import { MatIconModule } from '@angular/material/icon';
+import { BarComponent } from './components/bar/bar.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { MatIconModule } from '@angular/material/icon';
     ModalComponent,
     NgbdModalComponent,
     SolicitarTallerComponent,
+    BarComponent,
   ],
   imports: [
     BrowserModule,
