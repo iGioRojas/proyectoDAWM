@@ -15,22 +15,23 @@ import { MecanicoComponent } from './pages/mecanico/mecanico.component';
 import { RegistroMecanicoComponent } from './pages/mecanico/registro-mecanico/registro-mecanico.component';
 import { RegistrarVehiculoComponent } from './pages/mecanico/registrar-vehiculo/registrar-vehiculo.component';
 import { SolicitarTallerComponent } from './pages/cliente/solicitar-taller/solicitar-taller.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
-  { path: 'perfil',component:PerfilComponent},
+  { path: 'perfil',component:PerfilComponent, canActivate:[AuthGuard]},
   { path: 'iniciarSesion', component: LoginComponent },
   { path: 'registro', component: RegisterComponent},
   { path: 'noticias', component: NoticiasComponent},
   { path: 'promo/:id', component: PromosComponent },
-  { path: 'seguimiento', component: SeguimientoComponent},
+  { path: 'seguimiento', component: SeguimientoComponent,canActivate:[AuthGuard]},
   { path: 'servicioTaller', component:SolicitarTallerComponent},
   { path: 'servicio', component: ServicioComponent},
   { path: 'servicio-grua', component:GruaComponent},
   { path: 'servicio-mantenimiento', component:MantenimientoComponent},
-  { path: 'cliente',component:ClienteComponent},
-  { path: 'mecanico',component:MecanicoComponent},
-  { path: 'registromecanico',component:RegistroMecanicoComponent},
-  { path: 'registrarvehiculo',component:RegistrarVehiculoComponent},
+  { path: 'cliente',component:ClienteComponent, canActivate:[AuthGuard]},
+  { path: 'mecanico',component:MecanicoComponent, canActivate:[AuthGuard]},
+  { path: 'registromecanico',component:RegistroMecanicoComponent,canActivate:[AuthGuard]},
+  { path: 'registrarvehiculo',component:RegistrarVehiculoComponent,canActivate:[AuthGuard]},
   { path: '', component: HomeComponent },
   { path: '**', pathMatch:'full', redirectTo: '' },
 ];
