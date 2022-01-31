@@ -27,7 +27,7 @@ const routes: Routes = [
   { path: 'servicioTaller', component:SolicitarTallerComponent,canActivate:[AuthGuard]},
   { path: 'servicio', component: ServicioComponent},
   { path: 'servicio-grua', component:GruaComponent,canActivate:[AuthGuard]},
-  { path: 'servicio-mantenimiento', component:MantenimientoComponent},
+  { path: 'servicio-mantenimiento', component:MantenimientoComponent,canActivate:[AuthGuard]},
   { path: 'cliente',component:ClienteComponent, canActivate:[AuthGuard]},
   { path: 'mecanico',component:MecanicoComponent, canActivate:[AuthGuard]},
   { path: 'registromecanico',component:RegistroMecanicoComponent,canActivate:[AuthGuard]},

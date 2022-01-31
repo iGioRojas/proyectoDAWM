@@ -1,16 +1,14 @@
 <app-nav></app-nav>
 <div class="profile">
-  <h2 class="m-2">Bienvenido a Grúas Yerovi</h2>
+  <h2 class="m-2">{{saludo}}</h2>
   <img src="https://doodleipsum.com/700/avatar-2" class="img-fluid" />
 </div>
 <div class="text-center">
-  <h3 class="title">HOLA {{usuario.nombres}}</h3>
+  <h3 class="title">{{usuario.nombres}} {{usuario.apellidos}}</h3>
   <h6>Mecánico</h6>
   <div class="description">
     <p class="px-4">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit cupiditate
-      praesentium, sint quos, quod error libero ullam accusamus ipsa voluptates
-      exercitationem neque culpa unde ratione autem dicta facere at beatae.
+      {{cantidadMantenimiento}}
     </p>
   </div>
 </div>
