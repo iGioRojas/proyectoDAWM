@@ -10,7 +10,7 @@ export class LoginService {
   constructor(private http:HttpClient) { }
 
   getUser(user:string,password:string):Observable<any>{
-    return this.http.post<any>("http://localhost:3000/login",{
+    return this.http.post<any>("http://localhost:3001/login",{
       email:user,
       password:password
     })

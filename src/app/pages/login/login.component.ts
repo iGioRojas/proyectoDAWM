@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
       this.login.getUser(this.correo,this.contra).subscribe(data => {
         if(data.length == 0){this.error = true}
          else{
-           console.log(data)
-           let rol = data[0]["usuario"]["rol"];
+           let rol = data.rol;
+           localStorage.setItem('token',data['token']);
            switch(rol){
              case "cliente":
                 this.router.navigate(['/cliente']);
