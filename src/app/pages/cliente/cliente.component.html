@@ -4,13 +4,13 @@
   <img src="https://doodleipsum.com/700/avatar-2" class="img-fluid" />
 </div>
 <div class="text-center">
-  <h3 class="title">Jonathan García</h3>
-  <h6>Zona: Guayas</h6>
+  <h2 class="title h2">{{user.nombres}} {{user.apellidos}}</h2>
+  <h6>Zona: {{user.ubicacion}}</h6>
   <div class="description">
+    <h4>{{promocion.titulo}}</h4>
     <p class="px-4">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit cupiditate
-      praesentium, sint quos, quod error libero ullam accusamus ipsa voluptates
-      exercitationem neque culpa unde ratione autem dicta facere at beatae.
+      {{promocion.descripcion}}
+      ${{promocion.precio}}
     </p>
   </div>
 </div>
