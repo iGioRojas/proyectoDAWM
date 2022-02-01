@@ -16,7 +16,34 @@ export class LoginComponent implements OnInit {
   constructor(public router:Router,public login:LoginService) { }
 
   ngOnInit(): void {
+    this.ruteo();
   }
+  ruteo():void{
+    let token = localStorage.getItem('token');
+    if(token){
+      fetch('http://localhost:3001/usuarios/token', {
+      method: 'post',
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        let tipo = data['authData']['tipo'];
+        switch(tipo){
+          case "cliente":
+             this.router.navigate(['/cliente']);
+             break;
+          case "mecanico":
+             this.router.navigate(['/mecanico']);
+             break;
+          case "administrador":
+             this.router.navigate(['/perfil'])
+             break;
+        }});
+    }
+  }
+
 
   iniciarSesion(){
     if(this.correo !="" && this.contra !=""){
