@@ -8,11 +8,9 @@ import * as d3 from 'd3';
 })
 export class PieComponent implements OnInit {
   private data: { Framework: string; Stars: string; Released: string }[] = [
-    { Framework: 'Vue', Stars: '166443', Released: '2014' },
-    { Framework: 'React', Stars: '150793', Released: '2013' },
-    { Framework: 'Angular', Stars: '62342', Released: '2016' },
-    { Framework: 'Backbone', Stars: '27647', Released: '2010' },
-    { Framework: 'Ember', Stars: '21471', Released: '2011' },
+    { Framework: 'Preventivo', Stars: '52', Released: '2014' },
+    { Framework: 'Correctivo', Stars: '54', Released: '2013' },
+    { Framework: 'Predictivo', Stars: '44', Released: '2016' },
   ];
 
   private svg: any;
@@ -26,8 +24,24 @@ export class PieComponent implements OnInit {
 
   ngOnInit(): void {
     this.createSvg();
-    this.createColors();
-    this.drawChart();
+    this.cargarDatos();
+  }
+
+  private cargarDatos(): void {
+    fetch('http://localhost:3001/tipo_mantenimiento/conteo')
+      .then((res) => res.json())
+      .then((data) => {
+        let tmp: any[] = [];
+        for (let dato of data) {
+          let data_tmp = {
+            tipo: dato.descripcion,
+            cantidad: dato.cantidad.toString(),
+          };
+          tmp.push(data_tmp);
+        }
+        this.createColors(tmp);
+        this.drawChart(tmp);
+      });
   }
 
   private createSvg(): void {
@@ -43,21 +57,21 @@ export class PieComponent implements OnInit {
       );
   }
 
-  private createColors(): void {
+  private createColors(data: any[]): void {
     this.colors = d3
       .scaleOrdinal()
-      .domain(this.data.map((d) => d.Stars.toString()))
+      .domain(data.map((d) => d.cantidad.toString()))
       .range(['#c7d3ec', '#a5b8db', '#879cc4', '#677795', '#5a6782']);
   }
 
-  private drawChart(): void {
+  private drawChart(data: any[]): void {
     // Compute the position of each group on the pie:
-    const pie = d3.pie<any>().value((d: any) => Number(d.Stars));
+    const pie = d3.pie<any>().value((d: any) => Number(d.cantidad));
 
     // Build the pie chart
     this.svg
       .selectAll('pieces')
-      .data(pie(this.data))
+      .data(pie(data))
       .enter()
       .append('path')
       .attr('d', d3.arc().innerRadius(0).outerRadius(this.radius))
@@ -70,10 +84,10 @@ export class PieComponent implements OnInit {
 
     this.svg
       .selectAll('pieces')
-      .data(pie(this.data))
+      .data(pie(data))
       .enter()
       .append('text')
-      .text((d: any) => d.data.Framework)
+      .text((d: any) => d.data.tipo)
       .attr(
         'transform',
         (d: any) => 'translate(' + labelLocation.centroid(d) + ')'
