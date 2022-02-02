@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/interfaces/usuario';
+import { Promo2 } from 'src/app/interfaces/promo2';
 
 @Component({
   selector: 'app-cliente',
@@ -9,8 +10,8 @@ import { Usuario } from 'src/app/interfaces/usuario';
 export class ClienteComponent implements OnInit {
 
   user:Usuario;
-  promociones:string[] = []
-  promocion:any;
+  promociones:any[] = []
+  promocion:Promo2;
   constructor() {
     this.user = {
       id_usuario:0,
@@ -26,6 +27,11 @@ export class ClienteComponent implements OnInit {
       },
       rol:'',
       correo:''
+    }
+    this.promocion = {
+      titulo: '',
+      precio: '',
+      descripcion: '',
     }
    }
 
@@ -60,6 +66,11 @@ export class ClienteComponent implements OnInit {
         this.promocion = this.promociones[Math.floor(Math.random() * this.promociones.length)];
       });
 
+    }
+
+    cerrarSesion(){
+      localStorage.clear();
+      window.location.reload();
     }
 
 }

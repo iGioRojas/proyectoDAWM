@@ -12,6 +12,11 @@
   text-shadow: 2px 2px 2px #000000;
   font-size:2em;
 }
+button{
+  display: inline;
+  position: absolute;
+  right: 0;
+}
 img{
   height: 20em;
   width: 20em;

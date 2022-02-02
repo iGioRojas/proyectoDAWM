@@ -51,4 +51,9 @@ export class PerfilComponent implements OnInit {
       .then(data => this.user = data);
     });
   }
+
+  cerrarSesion(){
+    localStorage.clear();
+    window.location.reload();
+  }
 }

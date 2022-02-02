@@ -8,6 +8,12 @@
   background-size: cover;
 }
 
+button{
+  display: inline;
+  position: absolute;
+  right: 0;
+}
+
 .profile h2{
   color: white;
   text-shadow: 2px 2px 2px #000000;
