@@ -16,6 +16,7 @@ import { PromosComponent } from './pages/promos/promos.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { NoticiasPipe } from './pipes/noticias.pipe';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { MecanicoComponent } from './pages/mecanico/mecanico.component';
 import { ClienteComponent } from './pages/cliente/cliente.component';
 import { RegistroMecanicoComponent } from './pages/mecanico/registro-mecanico/registro-mecanico.component';
@@ -61,6 +62,7 @@ import { PieComponent } from './components/pie/pie.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
     FormsModule,
     NgbModule,
     BrowserAnimationsModule,
