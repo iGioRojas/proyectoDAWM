@@ -30,14 +30,13 @@
       <div
         class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
       >
-        <h1 class="h2">Bienvenido {{user.nombres}} {{user.apellidos}}</h1>
-        <p>Rol: {{user.rol}}</p>
+        <h1 class="h2">Bienvenido {{ user.nombres }} {{ user.apellidos }}</h1>
+        <p>Rol: {{ user.rol }}</p>
       </div>
 
       <h3>Clientes por año</h3>
-      <figure class="col-sm-12" id="bar" [ngClass]="active"></figure>
-      <!-- <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas> -->
-      <app-bar></app-bar>
+      <app-bar [tipo]="'serv_grua'" [lim_sup]="100"></app-bar>
+      <app-bar [tipo]="'serv_mantenimiento'" [lim_sup]="15"></app-bar>
       <app-pie></app-pie>
       <h2 id="registros">Últimos registros</h2>
       <div class="table-responsive">

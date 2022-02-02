@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
@@ -7,13 +7,8 @@ import * as d3 from 'd3';
   styleUrls: ['./bar.component.css'],
 })
 export class BarComponent implements OnInit {
-  private data: { Framework: string; Stars: string; Released: string }[] = [
-    { Framework: 'Vue', Stars: '166443', Released: '2014' },
-    { Framework: 'React', Stars: '150793', Released: '2013' },
-    { Framework: 'Angular', Stars: '62342', Released: '2016' },
-    { Framework: 'Backbone', Stars: '27647', Released: '2010' },
-    { Framework: 'Ember', Stars: '21471', Released: '2011' },
-  ];
+  @Input() tipo: string = '';
+  @Input() lim_sup: number = 0;
 
   private svg: any;
   private margin = 50;
@@ -23,8 +18,17 @@ export class BarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
+    this.cargarDatos();
     this.createSvg();
-    this.drawBars(this.data);
+  }
+
+  private cargarDatos(): void {
+    fetch(`http://localhost:3001/${this.tipo}/conteo`)
+      .then((res) => res.json())
+      .then((data: []) => {
+        this.drawBars(data.reverse());
+      })
+      .catch((err) => err);
   }
 
   private createSvg(): void {
@@ -42,7 +46,7 @@ export class BarComponent implements OnInit {
     const x = d3
       .scaleBand()
       .range([0, this.width])
-      .domain(data.map((d) => d.Framework))
+      .domain(data.map((d) => `${d.año}/${d.mes}`))
       .padding(0.2);
 
     // Draw the X-axis on the DOM
@@ -55,7 +59,10 @@ export class BarComponent implements OnInit {
       .style('text-anchor', 'end');
 
     // Create the Y-axis band scale
-    const y = d3.scaleLinear().domain([0, 200000]).range([this.height, 0]);
+    const y = d3
+      .scaleLinear()
+      .domain([0, this.lim_sup])
+      .range([this.height, 0]);
 
     // Draw the Y-axis on the DOM
     this.svg.append('g').call(d3.axisLeft(y));
@@ -66,10 +73,10 @@ export class BarComponent implements OnInit {
       .data(data)
       .enter()
       .append('rect')
-      .attr('x', (d: any) => x(d.Framework))
-      .attr('y', (d: any) => y(d.Stars))
+      .attr('x', (d: any) => x(`${d.año}/${d.mes}`))
+      .attr('y', (d: any) => y(d.num_servicios))
       .attr('width', x.bandwidth())
-      .attr('height', (d: any) => this.height - y(d.Stars))
+      .attr('height', (d: any) => this.height - y(d.num_servicios))
       .attr('fill', '#d04a35');
   }
 }
