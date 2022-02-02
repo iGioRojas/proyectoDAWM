@@ -1,60 +1,74 @@
 <app-nav></app-nav>
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero d-flex align-items-center">
-
-  <h1 data-aos="fade-up" id="ayuda" (click)="empezarGuia()">Ayuda <i class="bi bi-question-circle-fill"></i></h1>
+  <!-- <h1 data-aos="fade-up" id="ayuda" (click)="empezarGuia()">Ayuda <i class="bi bi-question-circle-fill"></i></h1> -->
   <div class="container">
     <div class="row">
       <div class="col-lg-12 d-flex flex-column justify-content-center">
         <h1 data-aos="fade-up">GRÚAS YEROVI</h1>
-        <h2 data-aos="fade-up" data-aos-delay="400">Reparamos tu vehículo e incluímos servicio de grúas</h2>
+        <h2 data-aos="fade-up" data-aos-delay="400">
+          Reparamos tu vehículo e incluímos servicio de grúas
+        </h2>
         <div data-aos="fade-up" data-aos-delay="600">
-          <div class="text-center ">
-            <a [routerLink]="['iniciarSesion']" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" id="step1">
+          <div class="text-center">
+            <a
+              [routerLink]="['iniciarSesion']"
+              class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"
+              id="step1"
+            >
               <span>Pide el servicio</span>
               <i class="bi bi-arrow-right"></i>
             </a>
           </div>
         </div>
       </div>
-
     </div>
   </div>
-
-</section><!-- End Hero -->
+</section>
+<!-- End Hero -->
 
 <main id="main">
   <!-- ======= About Section ======= -->
   <section id="about" class="about">
-
     <div class="container" data-aos="fade-up">
       <div class="row gx-0">
-
-        <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="col-lg-6 d-flex flex-column justify-content-center"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <div class="content">
             <h3>¿Quiénes Somos?</h3>
-            <h2>Somos expertos en reparación y mantenimiento de automóviles, dándole un servicio a la medida para nuestros clientes.</h2>
+            <h2>
+              Somos expertos en reparación y mantenimiento de automóviles,
+              dándole un servicio a la medida para nuestros clientes.
+            </h2>
             <p>
-              Ponemos a disposición de nuestros clientes el servicio de mantenimiento preventivo y de reparación. En donde realizamos trabajos de mecánica general, electricidad, sistema de control eléctrico. Además de ofrecer un servicio de grúas en caso de que nuestros clientes lo requieran.
+              Ponemos a disposición de nuestros clientes el servicio de
+              mantenimiento preventivo y de reparación. En donde realizamos
+              trabajos de mecánica general, electricidad, sistema de control
+              eléctrico. Además de ofrecer un servicio de grúas en caso de que
+              nuestros clientes lo requieran.
             </p>
           </div>
         </div>
 
-        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-          <img src="./assets/img/about.jpg" class="img-fluid" alt="">
+        <div
+          class="col-lg-6 d-flex align-items-center"
+          data-aos="zoom-out"
+          data-aos-delay="200"
+        >
+          <img src="./assets/img/about.jpg" class="img-fluid" alt="" />
         </div>
-
       </div>
     </div>
-
-  </section><!-- End About Section -->
+  </section>
+  <!-- End About Section -->
 
   <!-- ======= Values Section ======= -->
   <section id="values" class="values">
-
     <div class="container">
-
-      <header id = "step3" class="section-header">
+      <header id="step3" class="section-header">
         <h2>Nuestros Servicios</h2>
         <p>Estos son nuestros servicios</p>
       </header>
@@ -62,36 +76,44 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="box" data-aos="fade-up" data-aos-delay="200">
-            <img src="./assets/img/s1.png" class="img-fluid" alt="">
+            <img src="./assets/img/s1.png" class="img-fluid" alt="" />
             <h3>Mantenimiento de automóviles</h3>
-            <p>Somos los mejores ofreciendo un servicio de reparación y mantenimiento de automóviles.</p>
+            <p>
+              Somos los mejores ofreciendo un servicio de reparación y
+              mantenimiento de automóviles.
+            </p>
           </div>
         </div>
 
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="box" data-aos="fade-up" data-aos-delay="400">
-            <img src="./assets/img/s2.png" class="img-fluid" alt="">
+            <img src="./assets/img/s2.png" class="img-fluid" alt="" />
             <h3>Servicio de seguimiento personalizado</h3>
-            <p>Damos un servicio de seguimiento para que pueda observar el avance que se tiene en su carro.</p>
+            <p>
+              Damos un servicio de seguimiento para que pueda observar el avance
+              que se tiene en su carro.
+            </p>
           </div>
         </div>
 
         <div class="col-lg-4 mt-4 mt-lg-0">
           <div class="box" data-aos="fade-up" data-aos-delay="600">
-            <img src="./assets/img/s3.png" class="img-fluid" alt="">
+            <img src="./assets/img/s3.png" class="img-fluid" alt="" />
             <h3>Servicio de grúas en Guayaquil</h3>
-            <p>En caso de requerir de una grúa dentro de Guayaquil podemos ofrecerle la mejor opción.</p>
+            <p>
+              En caso de requerir de una grúa dentro de Guayaquil podemos
+              ofrecerle la mejor opción.
+            </p>
           </div>
         </div>
       </div>
     </div>
-  </section><!-- End Values Section -->
+  </section>
+  <!-- End Values Section -->
 
   <!-- ======= Testimonials Section ======= -->
   <section id="testimonials" class="testimonials">
-
     <div class="container" data-aos="fade-up">
-
       <header class="section-header">
         <h2>Testimonios</h2>
         <p>¿Qué dicen acerca de nosotros?</p>
@@ -99,75 +121,96 @@
 
       <div class="row" data-aos="fade-up" data-aos-delay="200">
         <div class="row">
-
           <div class="col">
             <div class="testimonial-item">
               <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i>
               </div>
-              <p>
-                ¡Grúas Yerovi salvó mi vida!
-              </p>
+              <p>¡Grúas Yerovi salvó mi vida!</p>
               <div class="profile mt-auto">
-                <img src="./assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
+                <img
+                  src="./assets/img/testimonials/testimonials-1.jpg"
+                  class="testimonial-img"
+                  alt=""
+                />
                 <h3>Daniel</h3>
               </div>
             </div>
-          </div><!-- End testimonial item -->
+          </div>
+          <!-- End testimonial item -->
 
           <div class="col">
             <div class="testimonial-item">
               <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i>
               </div>
               <p>
-                Para los ciegos la luz, para el hambriento la comida, para los sordos el sonido, para el mudo el habla, para mi Grúas Yerovi.
+                Para los ciegos la luz, para el hambriento la comida, para los
+                sordos el sonido, para el mudo el habla, para mi Grúas Yerovi.
               </p>
               <div class="profile mt-auto">
-                <img src="./assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                <img
+                  src="./assets/img/testimonials/testimonials-2.jpg"
+                  class="testimonial-img"
+                  alt=""
+                />
                 <h3>Margarita</h3>
               </div>
             </div>
-          </div><!-- End testimonial item -->
+          </div>
+          <!-- End testimonial item -->
 
           <div class="col">
             <div class="testimonial-item">
               <div class="stars">
-                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i
+                ><i class="bi bi-star-fill"></i>
               </div>
-              <p>
-                ¡El mejor servicio de mantenimiento!
-              </p>
+              <p>¡El mejor servicio de mantenimiento!</p>
               <div class="profile mt-auto">
-                <img src="./assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
+                <img
+                  src="./assets/img/testimonials/testimonials-3.jpg"
+                  class="testimonial-img"
+                  alt=""
+                />
                 <h3>María</h3>
               </div>
             </div>
-          </div><!-- End testimonial item -->
+          </div>
+          <!-- End testimonial item -->
         </div>
         <div class="swiper-pagination"></div>
       </div>
-
     </div>
-
-  </section><!-- End Testimonials Section -->
+  </section>
+  <!-- End Testimonials Section -->
 
   <!-- ======= Team Section ======= -->
   <section id="team" class="team">
-
     <div class="container" data-aos="fade-up">
-
       <header class="section-header">
         <h2>Equipo</h2>
         <p>Nuestro equipo trabajador</p>
       </header>
 
       <div class="row gy-4">
-
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <div
+          class="col-lg-3 col-md-6 d-flex align-items-stretch"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <div class="member">
             <div class="member-img">
-              <img src="./assets/img/team/team-1.jpg" class="img-fluid" alt="">
+              <img
+                src="./assets/img/team/team-1.jpg"
+                class="img-fluid"
+                alt=""
+              />
             </div>
             <div class="member-info">
               <h4>Joel Choez</h4>
@@ -177,10 +220,18 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+        <div
+          class="col-lg-3 col-md-6 d-flex align-items-stretch"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           <div class="member">
             <div class="member-img">
-              <img src="./assets/img/team/team-2.jpg" class="img-fluid" alt="">
+              <img
+                src="./assets/img/team/team-2.jpg"
+                class="img-fluid"
+                alt=""
+              />
             </div>
             <div class="member-info">
               <h4>Geovanny Rojas</h4>
@@ -190,10 +241,18 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+        <div
+          class="col-lg-3 col-md-6 d-flex align-items-stretch"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           <div class="member">
             <div class="member-img">
-              <img src="./assets/img/team/team-3.jpg" class="img-fluid" alt="">
+              <img
+                src="./assets/img/team/team-3.jpg"
+                class="img-fluid"
+                alt=""
+              />
             </div>
             <div class="member-info">
               <h4>Jonathan García</h4>
@@ -203,10 +262,18 @@
           </div>
         </div>
 
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+        <div
+          class="col-lg-3 col-md-6 d-flex align-items-stretch"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
           <div class="member">
             <div class="member-img">
-              <img src="./assets/img/team/team-4.jpg" class="img-fluid" alt="">
+              <img
+                src="./assets/img/team/team-4.jpg"
+                class="img-fluid"
+                alt=""
+              />
             </div>
             <div class="member-info">
               <h4>Fiorella Yerovi</h4>
@@ -215,17 +282,14 @@
             </div>
           </div>
         </div>
-
       </div>
-
     </div>
-
-  </section><!-- End Team Section -->
+  </section>
+  <!-- End Team Section -->
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
-
-    <div id = "step4" class="container">
+    <div id="step4" class="container">
       <header class="section-header">
         <h2>Contacto</h2>
         <p>Contáctenos</p>
@@ -238,73 +302,103 @@
               <div class="info-box">
                 <i class="bi bi-geo-alt"></i>
                 <h3>Dirección</h3>
-                <p>Km. 21 Vía a la Costa<br>Guayaquil, Ecuador<br>ㅤ</p>
+                <p>Km. 21 Vía a la Costa<br />Guayaquil, Ecuador<br /></p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="info-box">
                 <i class="bi bi-telephone"></i>
                 <h3>Llámanos</h3>
-                <p>0987654321<br>0912345678<br>ㅤ</p>
+                <p>0987654321<br />0912345678<br /></p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="info-box">
                 <i class="bi bi-envelope"></i>
                 <h3>Correo</h3>
-                <p>gruas@gruasyerovi.com<br>contacto@gruasyerovi.com<br>ㅤ</p>
+                <p>gruas@gruasyerovi.com<br />contacto@gruasyerovi.com<br /></p>
               </div>
             </div>
             <div class="col-md-6">
               <div class="info-box">
                 <i class="bi bi-clock"></i>
                 <h3>Horario de apertura</h3>
-                <p>Lunes - Domingo<br>9:00AM - 06:00PM<br>ㅤ</p>
+                <p>Lunes - Domingo<br />9:00AM - 06:00PM<br /></p>
               </div>
             </div>
           </div>
         </div>
 
-        <div  class="col-lg-6">
-          <form action="forms/contact.php" method="post" class="php-email-form">
+        <div class="col-lg-6">
+          <form class="php-email-form" (submit)="enviarCorreo()">
             <div class="row gy-4">
+              <div class="col-md-6">
+                <label for="cars">Nombre</label>
+                <input
+                  type="text"
+                  name="nombre"
+                  class="form-control"
+                  placeholder="Nombres y Apellidos"
+                  required
+                  [(ngModel)]="nombre"
+                />
+              </div>
 
               <div class="col-md-6">
-        <label for="cars">Nombre</label>
-                <input type="text" name="name" class="form-control" placeholder="Nombres y Apellidos" required>
+                <label for="cars">Correo</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="correo"
+                  placeholder="Correo"
+                  required
+                  [(ngModel)]="correo"
+                />
               </div>
 
               <div class="col-md-6">
-        <label for="cars">Correo</label>
-                <input type="email" class="form-control" name="email" placeholder="Correo" required>
+                <label for="cars">Fecha de nacimiento</label>
+                <input
+                  placeholder="Fecha de nacimiento"
+                  class="form-control"
+                  type="text"
+                  name="fecha"
+                  onfocus="(this.type='date')"
+                  onblur="(this.type='text')"
+                  id="date"
+                  required
+                  [(ngModel)]="fecha"
+                />
               </div>
 
-      <div class="col-md-6">
-        <label for="cars">Fecha de nacimiento</label>
-        <input placeholder="Fecha de nacimiento" class="form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" id="date" required>
-              </div>
-
-              <div class="col-md-6 ">
-        <label for="cars">Lugar de origen</label><br>
-        <select id="origen" name="origen" class="form-control" required>
-        <option disabled selected>Selecciona una opción</option>
-        <option value="norte">Norte de Guayaquil</option>
-        <option value="sur">Sur de Guayaquil</option>
-        <option value="viacosta">Vía a la Costa</option>
-        <option value="sambo">Samborondón</option>
-        <option value="otro">Otro</option>
-        </select>
+              <div class="col-md-6">
+                <label for="cars">Lugar de origen</label><br />
+                <input
+                  type="text"
+                  name="origen"
+                  class="form-control"
+                  placeholder="Escriba un lugar"
+                  required
+                  [(ngModel)]="origen"
+                />
               </div>
 
               <div class="col-md-12">
-        <label for="cars">Mensaje</label>
-                <textarea class="form-control" name="message" rows="6" placeholder="Mensaje" required></textarea>
+                <label for="cars">Mensaje</label>
+                <textarea
+                  class="form-control"
+                  name="mensaje"
+                  rows="6"
+                  placeholder="Mensaje"
+                  required
+                  [(ngModel)]="mensaje"
+                ></textarea>
               </div>
 
               <div class="col-md-12 text-center">
-                <div class="loading">Cargando</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Tu mensaje ha sido enviado. ¡Gracias!</div>
+                <div *ngIf="enviado">
+                  Tu mensaje ha sido enviado. ¡Gracias!
+                </div>
 
                 <button type="submit">Enviar mensaje</button>
               </div>
@@ -313,8 +407,9 @@
         </div>
       </div>
     </div>
-  </section><!-- End Contact Section -->
-
-</main><!-- End #main -->
+  </section>
+  <!-- End Contact Section -->
+</main>
+<!-- End #main -->
 
 <app-footer></app-footer>
