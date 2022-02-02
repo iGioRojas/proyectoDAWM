@@ -87,4 +87,9 @@ export class MecanicoComponent implements OnInit {
           });
 
   }
+
+  cerrarSesion(){
+    localStorage.clear();
+    window.location.reload();
+  }
 }
