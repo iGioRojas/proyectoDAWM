@@ -16,6 +16,7 @@ import { RegistroMecanicoComponent } from './pages/mecanico/registro-mecanico/re
 import { RegistrarVehiculoComponent } from './pages/mecanico/registrar-vehiculo/registrar-vehiculo.component';
 import { SolicitarTallerComponent } from './pages/cliente/solicitar-taller/solicitar-taller.component';
 import { AuthGuard } from './auth.guard';
+import { ReporteComponent } from './components/reporte/reporte.component';
 
 const routes: Routes = [
   { path: 'perfil',component:PerfilComponent, canActivate:[AuthGuard]},
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'mecanico',component:MecanicoComponent, canActivate:[AuthGuard]},
   { path: 'registromecanico',component:RegistroMecanicoComponent,canActivate:[AuthGuard]},
   { path: 'registrarvehiculo',component:RegistrarVehiculoComponent,canActivate:[AuthGuard]},
+  { path: 'registros',component:ReporteComponent,canActivate:[AuthGuard]},
   { path: '', component: HomeComponent },
   { path: '**', pathMatch:'full', redirectTo: '' },
 ];

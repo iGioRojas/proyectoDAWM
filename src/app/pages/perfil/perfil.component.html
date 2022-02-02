@@ -11,9 +11,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="perfil#registros">
+            <a class="nav-link" [routerLink]="['/registros']">
               <i class="bi bi-file-text"></i>
-              Últimos registros
+              Registros
             </a>
           </li>
           <li class="nav-item">
@@ -34,54 +34,12 @@
         <p>Rol: {{ user.rol }}</p>
       </div>
 
-      <h3>Clientes por año</h3>
-      <app-bar [tipo]="'serv_grua'" [lim_sup]="100"></app-bar>
+      <h3>Gráficos Estadísticos</h3>
+      <h4 class="pt-5">Servicios de grúa</h4>
+      <app-bar [tipo]="'serv_grua'" [lim_sup]="100"></app-bar><br>
+      <h4 class="pt-5">Servicios de mantenimiento</h4>
       <app-bar [tipo]="'serv_mantenimiento'" [lim_sup]="15"></app-bar>
       <app-pie></app-pie>
-      <h2 id="registros">Últimos registros</h2>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Fecha</th>
-              <th scope="col">Mecánico</th>
-              <th scope="col">Descripción</th>
-              <th scope="col">Cliente</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>0001</td>
-              <td>Noviembre 20, 2021</td>
-              <td>Mauricio Acevedo</td>
-              <td>Oferta feriado</td>
-              <td>Nayara Zheng</td>
-            </tr>
-            <tr>
-              <td>0002</td>
-              <td>Noviembre 20, 2021</td>
-              <td>Max Lago</td>
-              <td>Mantenimiento de llantas</td>
-              <td>Pedro Antonio Nevado</td>
-            </tr>
-            <tr>
-              <td>0003</td>
-              <td>Noviembre 20, 2021</td>
-              <td>Mauricio Acevedo</td>
-              <td>Cambio de aceite</td>
-              <td>Jesus Palacio</td>
-            </tr>
-            <tr>
-              <td>0004</td>
-              <td>Diciembre 03, 2021</td>
-              <td>Max Lago</td>
-              <td>Problema del motor</td>
-              <td>Ferran Piñero</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
     </main>
   </div>
 </div>

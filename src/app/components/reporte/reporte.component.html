@@ -1,0 +1,75 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div class="col-8"><h2 class="display-4">Bienvenido a la sección de Reportes</h2></div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div class="row">
+        <div class="col mx-2 bg-warning rounded text-center">
+          <h4>Cantidad de Clientes</h4>
+          <p>{{clientes}}</p>
+        </div>
+        <div class="col mx-2 bg-warning rounded text-center">
+          <h4>Cantidad de Mecánicos</h4>
+          <p>{{mecanicos}}</p>
+        </div>
+        <div class="col mx-2 bg-warning rounded text-center">
+          <h4>Ingresos</h4>
+          <p>${{ingresos}}</p>
+        </div>
+      </div>
+        <label class="mt-4 p-0 fs-12 h4" for="fecha">Escriba un filtro</label><br>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="filtro" [(ngModel)]="filtro">
+          <div class="input-group-append">
+            <button class="btn btn-outline-primary" type="button">Buscar</button>
+          </div>
+        </div>
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">ID Usuario</th>
+              <th scope="col">ID Auto</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Auto</th>
+              <th scope="col">Rol</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let info of infoNosql|reporte:filtro">
+              <td>{{info.id_usuario}}</td>
+              <td>{{info.id_auto}}</td>
+              <td>{{info.nombres +' '+info.apellidos}}</td>
+              <td>{{info.marca}}</td>
+              <td>{{info.rol}}</td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="col-6">
+      <h4 class="m-2">Últimos mantenimientos</h4>
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Mecánico</th>
+            <th scope="col">Auto</th>
+            <th scope="col">Cliente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let info of ultimosMantenimientos;index as i">
+            <td>{{info.id_mantenimiento}}</td>
+            <td>{{info.fecha_pedido}}</td>
+            <td>{{info.id_mecanico_usuario.nombres +' '+info.id_mecanico_usuario.apellidos}}</td>
+            <td>{{info.id_auto_auto.marca}}</td>
+            <td>{{propietario[i].nombres +' '+propietario[i].apellidos}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

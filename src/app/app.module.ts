@@ -29,6 +29,8 @@ import { SolicitarTallerComponent } from './pages/cliente/solicitar-taller/solic
 import { MatIconModule } from '@angular/material/icon';
 import { BarComponent } from './components/bar/bar.component';
 import { PieComponent } from './components/pie/pie.component';
+import { ReporteComponent } from './components/reporte/reporte.component';
+import { ReportePipe } from './pipes/reporte.pipe';
 
 
 @NgModule({
@@ -56,6 +58,8 @@ import { PieComponent } from './components/pie/pie.component';
     SolicitarTallerComponent,
     BarComponent,
     PieComponent,
+    ReporteComponent,
+    ReportePipe,
   ],
   imports: [
     BrowserModule,
