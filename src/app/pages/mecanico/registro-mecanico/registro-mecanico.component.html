@@ -19,6 +19,10 @@
         <input type="text" name="cedula" id="cedula" class="form-control" maxlength="10" [(ngModel)]="cedula">
       </div>
       <div class="col-sm-3">
+        <label for="celular" class="form-label mt-3">Celular</label>
+        <input type="text" name="celular" id="celular" class="form-control" maxlength="10" [(ngModel)]="celular">
+      </div>
+      <div class="col-sm-3">
         <label for="fecha" class="form-label mt-3">Fecha de Nacimiento</label>
         <input type="date" name="fecha" id="fecha" class="form-control" [(ngModel)]="fecha">
       </div>
@@ -26,10 +30,27 @@
         <label for="contra" class="form-label mt-3">Contraseña</label>
         <input type="password" name="contra" id="contra" class="form-control" [(ngModel)]="contra">
       </div>
+      <div class="col-sm-3">
+        <label for="provincia" class="form-label">Provincia:</label>
+        <select class="form-select"
+        name="provincia" id="provincia" [(ngModel)]="valorProvincia" (change)="seleCiudad()">
+          <option [value]="provincia" *ngFor="let provincia of provincias;index as i">{{provincia}}</option>
+        </select>
+      </div>
+      <div class="col-sm-3">
+        <label for="ciudad" class="form-label" >Ciudad</label>
+        <select name="ciudad" id="ciudad" class="form-select" [(ngModel)]="ciudad">
+          <option value="default" selected>Seleccione una ciudad</option>
+          <option [value]="ciudad" *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+        </select>
+      </div>
       <div class="mt-3">
         <button type="submit" class="btn btn-danger">Registrar</button>
       </div>
     </form>
+    <div id="registrado" class="text-center" *ngIf = "registrado">
+      <h2>Registrado correctamente</h2>
+    </div>
     <div id="error" class="text-center" *ngIf = "error">
       <h2>LLene todos los campos</h2>
     </div>
@@ -37,7 +58,7 @@
 </section>
 
 <section class="py-1 container">
-  <h1>Mecánico</h1>
+  <h1>Mecánicos</h1>
   <div class="table-responsive">
     <table class="table table-bordered align-middle table-sm">
       <thead class="bg-danger text-light">
@@ -46,18 +67,48 @@
               <th scope="col">Correo</th>
               <th scope="col">Nombre</th>
               <th scope="col">ID Mecánico</th>
+              <th scope="col">Acciones</th>
             </tr>
           </thead>
         <!-- <tbody *ngFor="let mecanico of mecanicos"> -->
         <tbody>
-          <tr>
-            <td>0987654321</td>
-            <td>jose@espol.edu.ec</td>
-            <td>Jose Jose</td>
-            <td>M-3052</td>
+          <tr *ngFor="let info of mecanicos">
+            <td>{{info.cedula}}</td>
+            <td>{{info.correo}}</td>
+            <td>{{info.nombres +" "+info.apellidos}}</td>
+            <td>{{info.id_usuario}}</td>
+            <td><button class="btn btn-primary btn-block mx-2" id="editar" type="button" data-toggle="modal" data-target="#user-form-modal" (click)="mostrar(info.id_usuario)">Editar</button><button (click)="eliminar(info.id_usuario)" class="btn btn-danger btn-block mx-2" id="eliminar" type="button">Eliminar</button></td>
           </tr>
       </tbody>
     </table>
   </div>
+  <div id="modalEditar" *ngIf="modalEdit">
+    <div class="modal-contenido">
+    <h1 class="text-light">Editar Mecánico</h1>
+    <form>
+      <div class="row my-4">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Nombre" name="nombre" [(ngModel)]="nombre2">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Apellido" name="apellido" [(ngModel)]="apellido2">
+        </div>
+      </div>
+      <div class="row my-4">
+        <div class="col">
+          <input type="date" class="form-control" placeholder="Fecha_Nacimiento" name="fecha" [(ngModel)]="fecha2">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Celular" name="celular" [(ngModel)]="celular2">
+        </div>
+        <div class="col">
+          <input type="email" class="form-control" placeholder="Correo" name="correo" [(ngModel)]="correo2">
+        </div>
+      </div>
+    </form>
+    <button id ="btnCancelar" class="btn btn-secondary mr-3" (click)="salirModal()">Cancelar</button>
+    <button id ="btnEliminar" class="btn bg-danger text-light mx-3" (click)="editar()">Enviar</button>
+  </div>
+</div>
 </section>
 <app-footer></app-footer>

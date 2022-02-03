@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/interfaces/usuario';
 import * as d3 from 'd3';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-perfil',
@@ -11,7 +12,7 @@ export class PerfilComponent implements OnInit {
 
   user:Usuario;
   active = "";
-  constructor() {
+  constructor(private router:Router) {
     this.user = {
       id_usuario:0,
       cedula:'',
@@ -47,6 +48,10 @@ export class PerfilComponent implements OnInit {
     }).then(response => response.json())
     .then(data => {
       let id = data['authData']['id'];
+      if (data['authData']['tipo'] != 'cliente') {
+        this.router.navigate(["/"]);
+        return;
+      }
       fetch(`http://localhost:3001/usuarios/id/${id}`).then(response => response.json())
       .then(data => this.user = data);
     });

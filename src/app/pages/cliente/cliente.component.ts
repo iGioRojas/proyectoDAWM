@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { Promo2 } from 'src/app/interfaces/promo2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cliente',
@@ -12,7 +13,7 @@ export class ClienteComponent implements OnInit {
   user:Usuario;
   promociones:any[] = []
   promocion:Promo2;
-  constructor() {
+  constructor(private router:Router) {
     this.user = {
       id_usuario:0,
       cedula:'',
@@ -50,11 +51,15 @@ export class ClienteComponent implements OnInit {
       }).then(response => response.json())
       .then(data => {
         let id = data['authData']['id'];
+        if (data['authData']['tipo'] != 'cliente') {
+          this.router.navigate(["/"]);
+          return;
+        }
         fetch(`http://localhost:3001/usuarios/id/${id}`).then(response => response.json())
         .then(data => {
           this.user = data;
           fetch(`http://localhost:3001/usuarios/ubicacion/${this.user.ubicacion}`).then(response => response.json())
-          .then(data => this.user.ubicacion = data['provincia']);
+          .then(data => this.user.ubicacion = data['ubicacion_ubicacion']['provincia']);
         });
       });
     }
