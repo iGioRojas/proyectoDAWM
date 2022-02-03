@@ -28,6 +28,7 @@ export class RegistroMecanicoComponent implements OnInit {
   idEditar: any;
   nombre2: string = '';
   correo2: string = '';
+  correo3: string = '';
   fecha2: string = '';
   apellido2: string = '';
   celular2: string = '';
@@ -121,22 +122,21 @@ export class RegistroMecanicoComponent implements OnInit {
   }
 
   editar() {
-    let nom = this.nombre.split(' ');
-    if (nom.length > 0) {
-      this.apellido = nom[1];
-      this.nombre = nom[0];
-    }
     this.http
       .put<any>('http://localhost:3001/usuarios', {
         nombres: this.nombre2,
         apellidos: this.apellido2,
         fecha_nacimiento: this.fecha2,
         celular: this.celular2,
-        ubicacion: 'Default',
         correo: this.correo2,
         idx: this.idEditar,
-      })
-      .subscribe((data) => window.location.reload());
+        correo_anterior:this.correo3,
+      }).subscribe(data =>{});
+
+      setTimeout(() => {
+        this.salirModal();
+        window.location.reload()
+      }, 2000);
   }
 
   mostrar(id: any) {
@@ -146,6 +146,12 @@ export class RegistroMecanicoComponent implements OnInit {
       .then((res) => res.json())
       .then((data) => {
         this.userActual = data;
+        this.nombre2 = this.userActual.nombres;
+        this.apellido2 = this.userActual.apellidos;
+        this.fecha2 = this.userActual.fecha_nacimiento;
+        this.celular2 = this.userActual.celular;
+        this.correo3 = this.userActual.correo;
+        this.correo2 = this.userActual.correo;
       })
       .catch((err) => err);
   }
