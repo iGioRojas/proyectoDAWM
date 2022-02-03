@@ -11,7 +11,6 @@
     class="form-select"
     aria-label="Disabled select example"
     id="combobox"
-    (change)="onChange($event)"
   >
     <option selected>Selecciona el vehículo</option>
     <option *ngFor="let item of autos" value="{{ item.id_auto }}">
@@ -30,19 +29,16 @@
         <th scope="col">Hora</th>
         <th scope="col">Detalle de reparación</th>
         <th scope="col">Mecánico</th>
-        <th scope="col">Adicional</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let seg of seguimientos">
-        <th scope="row">{{ seg.fecha_pedido }}</th>
-        <td>No hay hora</td>
-        <td>No hay descripcion</td>
+        <th scope="row">{{ seg.fecha_actual }}</th>
+        <td>{{ seg.hora_actual }}</td>
+        <td>{{ seg.observacion_mecanico }}</td>
         <td>
-          {{ seg.id_mecanico_usuario.nombres }}
-          {{ seg.id_mecanico_usuario.apellidos }}
+          {{ seg.mecanico }}
         </td>
-        <td><ngbd-modal-component></ngbd-modal-component></td>
       </tr>
     </tbody>
   </table>
