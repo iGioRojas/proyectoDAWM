@@ -48,7 +48,7 @@ export class PerfilComponent implements OnInit {
     }).then(response => response.json())
     .then(data => {
       let id = data['authData']['id'];
-      if (data['authData']['tipo'] != 'cliente') {
+      if (data['authData']['tipo'] != 'administrador') {
         this.router.navigate(["/"]);
         return;
       }
