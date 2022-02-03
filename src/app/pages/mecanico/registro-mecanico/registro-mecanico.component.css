@@ -1,15 +1,15 @@
-#modalEditar{
-  background-color: rgba(0,0,0,.8);
-  position:fixed;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
+#modalEditar {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-.modal-contenido{
-  background-color:rgba(2, 213, 250, 0.5);
-  width:75%;
+.modal-contenido {
+  background-color: rgba(211, 211, 211, 1);
+  width: 75%;
   height: 22em;
   padding: 10px 20px;
   margin: 10% auto;

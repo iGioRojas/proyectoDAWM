@@ -9,6 +9,7 @@ export class MantenimientoComponent implements OnInit {
   public autos: any[] = [];
   private id_usuario: any = 0;
   private id_auto: number = 0;
+  public seguimientos: any[] = [];
   constructor() {}
 
   ngOnInit(): void {}
@@ -17,7 +18,7 @@ export class MantenimientoComponent implements OnInit {
     fetch(`http://localhost:3001/usuarios/ubicacion/${data.id_usuario}`)
       .then((res) => res.json())
       .then((datos) => {
-        console.log(datos);
+        this.seguimientos = [];
         let plantilla = `
         <tr>
           <th>Propietario:</th>
@@ -47,8 +48,60 @@ export class MantenimientoComponent implements OnInit {
       .then((res) => res.json())
       .then((data) => {
         this.autos = data[0].autos;
-        this.id_auto = this.autos[0].id_auto;
+        this.iniChange(data[0].autos[0].id_auto);
       })
       .catch((err) => console.log(err));
+  }
+
+  public iniChange(value: any): void {
+    this.id_auto = value;
+    fetch(`http://localhost:3001/serv_mantenimiento/procesos/${value}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        this.seguimientos = data;
+      })
+      .catch((err) => err);
+  }
+
+  public onChange(value: any): void {
+    this.id_auto = value.target.value;
+    fetch(
+      `http://localhost:3001/serv_mantenimiento/procesos/${value.target.value}`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        this.seguimientos = data;
+      })
+      .catch((err) => err);
+  }
+
+  public crearServ(data: any) {
+    let current = new Date();
+    let mes = this.formatDatos(current.getMonth());
+    let dia = this.formatDatos(current.getDate());
+    let horas = this.formatDatos(current.getHours());
+    let minutos = this.formatDatos(current.getMinutes());
+    let segundos = this.formatDatos(current.getSeconds());
+    let postData = {
+      fecha_actual: `${current.getFullYear()}-${mes}-${dia}`,
+      hora_actual: `${horas}:${minutos}:${segundos}`,
+      observacion_mecanico: data.detalles,
+      foto: null,
+      tipoMantenimiento: 2,
+      id_auto: this.id_auto,
+      id_usuario: this.id_usuario,
+    };
+    fetch('http://localhost:3001/serv_mantenimiento/nuevoproceso', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+      body: JSON.stringify(postData),
+    });
+  }
+
+  private formatDatos(dato: any) {
+    return dato.toString().length === 2 ? `${dato}` : `0${dato}`;
   }
 }
