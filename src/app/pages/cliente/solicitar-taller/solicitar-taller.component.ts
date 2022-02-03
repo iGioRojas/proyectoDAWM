@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-solicitar-taller',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitarTallerComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit(): void {
+    let token = localStorage.getItem("token");
+      fetch("http://localhost:3001/usuarios/token",{
+        method:'post',
+        headers:{
+          'authorization':`Bearer ${token}`
+        }
+      }).then(response => response.json())
+      .then(data => {
+        if (data['authData']['tipo'] != 'cliente') {
+          this.router.navigate(["/"]);
+          return;
+        }
+    });
   }
 
   enviar(){

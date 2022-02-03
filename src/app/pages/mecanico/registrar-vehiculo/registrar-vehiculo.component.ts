@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { analyzeAndValidateNgModules } from '@angular/compiler';
 import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,9 +18,22 @@ export class RegistrarVehiculoComponent implements OnInit {
   color:string='';
   clave:number=0;
 
-  constructor(public http:HttpClient) { }
+  constructor(public http:HttpClient,public router:Router) { }
 
   ngOnInit(): void {
+    let token = localStorage.getItem("token");
+    fetch("http://localhost:3001/usuarios/token",{
+      method:'post',
+      headers:{
+        'authorization':`Bearer ${token}`
+      }
+    }).then(response => response.json())
+    .then(data => {
+      if (data['authData']['tipo'] != 'mecanico') {
+        this.router.navigate(["/"]);
+        return;
+      }
+  });
   }
 
   registrarAuto(){

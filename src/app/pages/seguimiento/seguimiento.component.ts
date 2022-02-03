@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-seguimiento',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SeguimientoComponent implements OnInit {
   public autos: any[] = [];
   public seguimientos: any[] = [];
-  constructor() {}
+  constructor(public router:Router) {}
 
   ngOnInit(): void {
     let token = localStorage.getItem('token');
@@ -21,6 +22,10 @@ export class SeguimientoComponent implements OnInit {
       })
         .then((response) => response.json())
         .then((data) => {
+          if (data['authData']['tipo'] != 'cliente') {
+            this.router.navigate(["/"]);
+            return;
+          }
           this.cargarDatos(data.authData.id);
         });
     }
