@@ -8,63 +8,49 @@
 
 <div id="registro-grua">
   <div class="container">
-    <form action="">
-      <div class="row" *ngIf="ClienteLogueado">
-        <div class="personal col-sm">
-        <h2>Información Personal</h2>
-        <label for="nombre">Nombre</label>
-        <input type="text" id="nombre">
-        <label for="apellido">Apellido</label>
-        <input type="text" id="apellido">
-        <label for="cedula">Cédula</label>
-        <input type="text" id="cedula">
-        <label for="celular">Celular</label>
-        <input type="number" placeholder= "+593 123456789" id="celular">
-      </div>
-
-      <div class="col-sm vehiculo">
-        <h2>Información Vehículo</h2>
-
-        <label for="placa">Placa</label>
-        <input type="text" name="placa" id="placa" />
-
-        <label>Marca</label>
-        <input type="text" name="text" />
-        <label>Modelo</label>
-        <input type="text" name="text" />
-        <label>Color</label>
-        <input type="text" name="text" />
-      </div>
-      </div>
-
-      <div *ngIf="!ClienteLogueado">
-
-        <select name="auto" id="auto">
-        <option value="default" selected>Seleccione su auto</option>
-        <option value="1">Auto1</option>
-        <option value="2">Auto2</option>
-        </select>
+    <form
+      #serv_grua="ngForm"
+      id="grua-form"
+      action=""
+      (ngSubmit)="onSubmit(serv_grua.value)"
+    >
+      <div class="row">
+        <div class="col-sm vehiculo">
+          <h2>Vehículo</h2>
+          <div class="selector-vehiculo">
+            <select
+              ngModel
+              class="form-select"
+              aria-label="Disabled select example"
+              id="combobox"
+              name="vehiculo"
+            >
+              <option *ngFor="let item of autos" value="{{ item.id_auto }}">
+                {{ item.marca }}
+              </option>
+            </select>
+          </div>
+        </div>
       </div>
       <div class="detalles">
-      <label for="detalles">Detalles sobre la ubicación</label>
-      <textarea
-        class="text-detalles"
-        name="detalles"
-        id="detalles"
-      ></textarea>
+        <label for="detalles">Detalles sobre la ubicación</label>
+        <textarea
+          name="detalles"
+          id="detalles"
+          rows="4"
+          class="text-detalles"
+          ngModel
+        ></textarea>
+      </div>
+      <div class="enviar">
+        <button id="enviar-form" type="submit">Enviar</button>
+      </div>
+    </form>
+    <div id="area-nav">
+      <button id="pedirvan" (click)="localizar()">Localizar</button>
     </div>
 
-
-      <div id="area-nav">
-        <button id="pedirvan" (click)="localizar()">Localizar</button>
-      </div>
-
-      <div id="map"><p>El mapa aparece después de los permisos</p></div>
-
-      <div class="enviar">
-        <button id="enviar-form">Enviar</button>
-      </div>
-      <div id="ubicacion" class="my-3"></div>
-  </form>
+    <div id="map"><p>El mapa aparece después de los permisos</p></div>
+  </div>
+  <app-footer></app-footer>
 </div>
-<app-footer></app-footer>

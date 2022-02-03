@@ -36,7 +36,9 @@ export class SeguimientoComponent implements OnInit {
   }
 
   public onChange(value: any): void {
-    fetch(`http://localhost:3001/serv_mantenimiento/${value.target.value}`)
+    fetch(
+      `http://localhost:3001/serv_mantenimiento/procesos/${value.target.value}`
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
