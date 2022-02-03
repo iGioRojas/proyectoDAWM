@@ -27,7 +27,7 @@ export class SeguimientoComponent implements OnInit {
   }
 
   private cargarDatos(id: string): void {
-    fetch(`http://localhost:3001/usuarios/auto/741`)
+    fetch(`http://localhost:3001/usuarios/auto/${id}`)
       .then((res) => res.json())
       .then((data) => {
         this.autos = data[0].autos;

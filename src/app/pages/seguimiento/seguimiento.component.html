@@ -11,6 +11,7 @@
     class="form-select"
     aria-label="Disabled select example"
     id="combobox"
+    (change)="onChange($event)"
   >
     <option selected>Selecciona el vehículo</option>
     <option *ngFor="let item of autos" value="{{ item.id_auto }}">
