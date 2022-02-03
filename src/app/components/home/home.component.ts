@@ -22,13 +22,13 @@ export class HomeComponent implements OnInit {
   }
 
   enviarCorreo(){
-    // this.http.post("http://localhost:3001/login/email",{
-    //   correo:this.correo,
-    //   nombre:this.nombre,
-    //   fecha:this.fecha,
-    //   origen:this.origen,
-    //   mensaje:this.mensaje
-    // }).subscribe(data => console.log(data));
+    this.http.post("http://localhost:3001/login/email",{
+      correo:this.correo,
+      nombre:this.nombre,
+      fecha:this.fecha,
+      origen:this.origen,
+      mensaje:this.mensaje
+    }).subscribe(data => console.log(data));
     this.enviado = true;
     setTimeout(()=>{window.location.reload()},3000);
   }
