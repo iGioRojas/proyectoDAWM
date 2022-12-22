@@ -7,11 +7,11 @@ import * as d3 from 'd3';
   styleUrls: ['./pie.component.css'],
 })
 export class PieComponent implements OnInit {
-  private data: { Framework: string; Stars: string; Released: string }[] = [
-    { Framework: 'Preventivo', Stars: '52', Released: '2014' },
-    { Framework: 'Correctivo', Stars: '54', Released: '2013' },
-    { Framework: 'Predictivo', Stars: '44', Released: '2016' },
-  ];
+  // private data: { Framework: string; Stars: string; Released: string }[] = [
+  //   { Framework: 'Preventivo', Stars: '52', Released: '2014' },
+  //   { Framework: 'Correctivo', Stars: '54', Released: '2013' },
+  //   { Framework: 'Predictivo', Stars: '44', Released: '2016' },
+  // ];
 
   private svg: any;
   private margin = 50;
