@@ -1,0 +1,19 @@
+#navMobile{
+  display: none;
+}
+
+
+@media screen and (max-width:1000px) {
+  #navMobile{
+    display: inline;
+    position: fixed;
+    top:15px;
+    right: 20px;
+    font-size: 30px;
+
+  }
+
+  a>span{
+    font-size: 1.3em;
+  }
+}

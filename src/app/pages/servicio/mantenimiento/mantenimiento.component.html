@@ -1,0 +1,106 @@
+<app-nav></app-nav>
+<div class="container">
+  <h1 class="display-4">Registro de Reparación</h1>
+  <p class="lead">
+    Verifica que todos los datos proporcionados estén correctos
+  </p>
+</div>
+<!-- Seleccion -->
+<form
+  #usuario_buscar="ngForm"
+  class="form-inline"
+  id="usuario-buscar"
+  (submit)="onSubmit(usuario_buscar.value)"
+>
+  <div class="d-flex flex-row flex-wrap align-items-end">
+    <div class="mx-4">
+      <label class="sr-only" for="inlineFormInputName2">Id usuario</label>
+      <input
+        type="text"
+        class="form-control mb-2 mr-sm-2"
+        id="id_usuario"
+        name="id_usuario"
+        ngModel
+      />
+    </div>
+    <div class="mx-4">
+      <button type="submit" class="btn btn-danger mb-2">Buscar</button>
+    </div>
+    <div class="mx-4">
+      <label class="sr-only" for="vehiculo">Seleccione un vehiculo</label>
+      <select
+        name="vehiculo"
+        id="vehiculo"
+        class="form-select mb-2 mr-sm-2"
+        (change)="onChange($event)"
+      >
+        <option *ngFor="let auto of autos" value="{{ auto.id_auto }}">
+          {{ auto.marca }}
+        </option>
+      </select>
+    </div>
+  </div>
+</form>
+
+<!-- end seleccion-->
+<!-- info -->
+<table class="mx-4">
+  <tbody id="llenar-datos">
+    <tr>
+      <th>Propietario:</th>
+      <td>------</td>
+    </tr>
+    <tr>
+      <th>Dirección:</th>
+      <td>------</td>
+    </tr>
+    <tr>
+      <th>Teléfono:</th>
+      <td>------</td>
+    </tr>
+  </tbody>
+</table>
+<!-- end info -->
+<!-- Detalle de reparacion -->
+<div class="form-floating mx-4">
+  <form
+    #enviar_mant="ngForm"
+    action=""
+    id="enviar-mant"
+    (submit)="crearServ(enviar_mant.value)"
+  >
+    <textarea
+      class="form-control"
+      id="floatingTextarea2"
+      style="height: 100px"
+      name="detalles"
+      ngModel
+    ></textarea>
+    <label for="floatingTextarea2">Detalle de reparación</label>
+    <button class="btn btn-danger mb-3">Enviar</button>
+  </form>
+</div>
+<!-- END detalle -->
+<!-- Tabla -->
+<table class="table table-bordered align-middle">
+  <thead class="bg-danger text-light">
+    <tr>
+      <th scope="col">Fecha</th>
+      <th scope="col">Hora</th>
+      <th scope="col">Detalle de reparación</th>
+      <th scope="col">Mecánico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of seguimientos">
+      <th scope="row">{{ item.fecha_actual }}</th>
+      <td>{{ item.hora_actual }}</td>
+      <td>
+        {{ item.observacion_mecanico }}
+      </td>
+      <td>{{ item.mecanico }}</td>
+    </tr>
+  </tbody>
+</table>
+<!--  End Tabla-->
+<app-footer></app-footer>

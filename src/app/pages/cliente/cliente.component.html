@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+<button class="btn btn-primary text-dark" (click)="cerrarSesion()">Cerrar Sesión</button>
+<div class="profile">
+  <h2 class="m-2">Bienvenido a Grúas Yerovi</h2>
+  <img src="https://doodleipsum.com/700/avatar-2" class="img-fluid" />
+</div>
+<div class="text-center">
+  <h2 class="title h2">{{user.nombres}} {{user.apellidos}}</h2>
+  <h6>Zona: {{user.ubicacion}}</h6>
+  <div class="description">
+    <h4>{{promocion.titulo}}</h4>
+    <p class="px-4">
+      {{promocion.descripcion}}
+      ${{promocion.precio}}
+    </p>
+  </div>
+</div>
+<div class="matrix">
+  <a id="mantenimiento" [routerLink]="['../servicioTaller']">Solicitar servicio de Taller<span><i class="bi bi-tools"></i></span> </a>
+  <a id="registroVehi" [routerLink]="['../servicio-grua']">Pedir Grúa<span><i class="bi bi-truck-flatbed"></i></span></a>
+  <a id="registroRepa" [routerLink]="['../seguimiento']"
+    >Seguimiento de Vehículo<span><i class="bi bi-journal-check"></i></span></a
+  >
+</div>
+<app-footer></app-footer>

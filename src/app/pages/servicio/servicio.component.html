@@ -1,0 +1,89 @@
+<app-nav></app-nav>
+<main id="main">
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="index.html">Principal</a></li>
+        <li>Servicios</li>
+      </ol>
+      <h2>Servicios</h2>
+    </div>
+  </section>
+  <!-- End Breadcrumbs -->
+
+  <section id="features" class="features">
+    <div class="container" data-aos="fade-up">
+      <header class="section-header">
+        <h2>Servicios</h2>
+        <p>Los servicios que proveemos</p>
+      </header>
+
+      <div class="row feture-tabs about" data-aos="fade-up">
+        <div class="col-lg-6">
+          <h3>Mantenimiento de carros</h3>
+          <p>
+            Ofrecemos los mejores servicios a la hora de darle mantenimiento a
+            tu automóvil. Realizamos desde reparaciones hasta chequeos mensuales
+            de tu automóvil. Algunos de nuestros servicion son:
+          </p>
+          <ul>
+            <li>ABC de frenos</li>
+            <li>Cambio de aceite y filtro de aceite</li>
+            <li>Reajuste de suspensión</li>
+            <li>Revisiones de luces, neumáticos y mucho más</li>
+          </ul>
+          <br />
+          <a
+            [routerLink]="['/iniciarSesion']"
+            class="
+              btn-read-more
+              d-inline-flex
+              align-items-center
+              justify-content-center
+              align-self-center
+            "
+          >
+            <span>Contratar</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="col-lg-6">
+          <img src="./assets/img/serv1.jpg" class="img-fluid" alt="" />
+        </div>
+      </div>
+      <div class="row feture-tabs about" data-aos="fade-up">
+        <div class="col-lg-6">
+          <h3>Servicio de grúas</h3>
+          <p>
+            Sabemos que puede ser un dolor de cabeza cuando tu carro se daña y
+            debes de ir a un mecánico, por lo que ofrecemos el servicio de grúas
+            el cual está disponible para cualquier lugar dentro de la ciudad de
+            Guayaquil y sus alrededores como Samborondón, Durán y otros.
+          </p>
+          <a
+            [routerLink]="['/servicio-grua']"
+            class="
+              btn-read-more
+              d-inline-flex
+              align-items-center
+              justify-content-center
+              align-self-center
+            "
+          >
+            <span>Contratar</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="col-lg-6">
+          <img src="./assets/img/serv2.jpg" class="img-fluid" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- End #main -->
+
+<app-footer></app-footer>

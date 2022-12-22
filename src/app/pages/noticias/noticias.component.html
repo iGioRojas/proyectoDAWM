@@ -1,0 +1,82 @@
+<app-nav></app-nav>
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="index.html">Principal</a></li>
+        <li>Noticias</li>
+      </ol>
+      <h2>Noticias</h2>
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Blog Section ======= -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+
+      <div class="row">
+        <div class="col-lg-8 entries">
+          <!-- Creo un for con angular, recorro el arreglo de noticias -->
+          <article class="entry" *ngFor="let noticia of noticias |noticiasFiltro:filtroNoticias">
+            <div class="entry-img">
+              <img [src]="noticia.img" alt="" class="img-fluid">
+            </div>
+
+            <h2 class="entry-title">
+              <a [routerLink]="['/promo',noticia.id]"> {{noticia.nombre}}</a>
+            </h2>
+
+            <div class="entry-meta">
+              <ul>
+                <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a [routerLink]="['/promo',noticia.id]"><time datetime="2021-11-01">{{noticia.fechaInicio}}</time></a></li>
+              </ul>
+            </div>
+
+            <div class="entry-content">
+              <p>{{noticia.descripcion}}<b>{{noticia.precio}}</b>.
+              </p>
+              <div class="read-more">
+                <a [routerLink]="['/promo',noticia.id]">Quiero esta promoción</a>
+              </div>
+            </div>
+          </article><!-- End blog entry -->
+
+          <div class="blog-pagination">
+            <ul class="justify-content-center">
+              <li class="active"><a href="#">1</a></li>
+            </ul>
+          </div>
+
+        </div><!-- End blog entries list -->
+
+        <div class="col-lg-4">
+
+          <div class="sidebar">
+            <!-- Añadir pipe -->
+            <h3 class="sidebar-title">Buscar</h3>
+            <div class="sidebar-item search-form">
+              <form action="">
+                <input type="text"  placeholder = "Buscar..." name="filtroNoticias" [(ngModel)] = "filtroNoticias">
+                <button type="submit"><i class="bi bi-search"></i></button>
+              </form>
+            </div><!-- End sidebar search formn-->
+
+            <h3 class="sidebar-title">Promociones activas</h3>
+            <div class="sidebar-item recent-posts">
+              <div class="post-item clearfix" *ngFor="let promocion of noticias;index as i">
+                <img [src]="promocion.img" alt="">
+                <h4><a [routerLink]="['/promo',(i+1)]"> {{promocion.nombre}}</a></h4>
+                <time datetime="2020-01-01">{{promocion.fechaInicio}}</time>
+              </div>
+            </div><!-- End sidebar recent posts-->
+          </div><!-- End sidebar -->
+        </div><!-- End blog sidebar -->
+      </div>
+    </div>
+  </section><!-- End Blog Section -->
+
+</main><!-- End #main -->
+<app-footer></app-footer>

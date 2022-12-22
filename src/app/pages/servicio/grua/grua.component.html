@@ -1,0 +1,56 @@
+<app-nav></app-nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Servicio Grúas</h1>
+    <p class="lead">Grúas al instante</p>
+  </div>
+</div>
+
+<div id="registro-grua">
+  <div class="container">
+    <form
+      #serv_grua="ngForm"
+      id="grua-form"
+      action=""
+      (ngSubmit)="onSubmit(serv_grua.value)"
+    >
+      <div class="row">
+        <div class="col-sm vehiculo">
+          <h2>Vehículo</h2>
+          <div class="selector-vehiculo">
+            <select
+              ngModel
+              class="form-select"
+              aria-label="Disabled select example"
+              id="combobox"
+              name="vehiculo"
+            >
+              <option *ngFor="let item of autos" value="{{ item.id_auto }}">
+                {{ item.marca }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="detalles">
+        <label for="detalles">Detalles sobre la ubicación</label>
+        <textarea
+          name="detalles"
+          id="detalles"
+          rows="4"
+          class="text-detalles"
+          ngModel
+        ></textarea>
+      </div>
+      <div class="enviar">
+        <button id="enviar-form" type="submit">Enviar</button>
+      </div>
+    </form>
+    <div id="area-nav">
+      <button id="pedirvan" (click)="localizar()">Localizar</button>
+    </div>
+
+    <div id="map"><p>El mapa aparece después de los permisos</p></div>
+  </div>
+  <app-footer></app-footer>
+</div>

@@ -1,0 +1,52 @@
+<app-nav></app-nav>
+<div class="container-fluid">
+  <div class="row">
+    <nav class="bg-light">
+      <div class="pt-3">
+        <ul class="nav flex">
+          <li class="nav-item">
+            <a class="nav-link" href="perfil" (click)="enfasis()">
+              <i class="bi bi-file-earmark-bar-graph"></i>
+              Resumen
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/registros']">
+              <i class="bi bi-file-text"></i>
+              Registros
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/registromecanico']">
+              <i class="bi bi-tools"></i>
+              Registrar Mecánico
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mano" (click)="cerrarSesion()">
+              <i class="bi bi-box-arrow-right"></i>
+              Cerrar Sesión
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="px-md-4">
+      <div
+        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      >
+        <h1 class="h2">Bienvenido {{ user.nombres }} {{ user.apellidos }}</h1>
+        <p>Rol: {{ user.rol }}</p>
+      </div>
+
+      <h3>Gráficos Estadísticos</h3>
+      <h4 class="pt-5">Servicios de grúa</h4>
+      <app-bar [tipo]="'serv_grua'" [lim_sup]="100"></app-bar><br>
+      <h4 class="pt-5">Servicios de mantenimiento</h4>
+      <app-bar [tipo]="'serv_mantenimiento'" [lim_sup]="15"></app-bar>
+      <app-pie></app-pie>
+    </main>
+  </div>
+</div>
+<app-footer></app-footer>

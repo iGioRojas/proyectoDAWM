@@ -1,0 +1,88 @@
+.profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(https://picsum.photos/900/200?grayscale);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.profile h2{
+  color: white;
+  text-shadow: 2px 2px 2px #000000;
+  font-size:2em;
+}
+button{
+  display: inline;
+  position: absolute;
+  right: 0;
+}
+img{
+  height: 20em;
+  width: 20em;
+}
+
+.matrix{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  grid-template-rows: repeat(2,1fr);
+  justify-content: space-evenly;
+  gap: 10px;
+  margin: 40px;
+}
+
+#registroVehi, #registroRepa, #mantenimiento{
+  height: 20vh;
+  background-color: #A93226;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  cursor: pointer;
+}
+
+#mantenimiento{
+  grid-column: 2/6;
+}
+#registroVehi{
+  grid-column: 2/4;
+}
+
+#registroRepa{
+  grid-column: 4/6
+}
+
+a{
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#registroVehi:hover{
+  box-shadow: rgba(0, 0, 0) 0px 0px 0px 3px;
+}
+#registroRepa:hover{
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 3px;
+}
+#mantenimiento:hover{
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 3px;
+}
+span{
+  font-size: 3em;
+  display: block;
+}
+span:hover{
+  -webkit-animation:rotate-center .6s ease-in-out both;animation:rotate-center .6s ease-in-out both
+}
+
+@media screen and (max-width:700px) {
+  .matrix{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin: 40px;
+  }
+}
+
+@-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}

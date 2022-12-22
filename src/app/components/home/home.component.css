@@ -1,0 +1,8 @@
+#ayuda{
+  font-size: 1.5rem;
+  position: absolute;
+  color: whitesmoke;
+  top: 120px;
+  right: 20px;
+  cursor: pointer;
+}

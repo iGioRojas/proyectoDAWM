@@ -1,0 +1,104 @@
+<app-nav></app-nav>
+<!-- Registro -->
+<div class="container-fluid mb-5">
+  <div class="row">
+    <div class="col-4 offset-1 mr-5">
+      <form class="mt-5 px-5" (submit)="registrar()">
+        <div>
+          <label for="inputNombre" class="form-label" >Nombres</label>
+          <input
+            type="text"
+            required
+            name="nombres"
+            class="form-control "
+            id="inputNombre"
+            [(ngModel)]="nombres"
+          />
+        </div>
+        <div>
+          <label for="inputApellido" class="form-label">Apellidos</label>
+          <input
+            type="text"
+            required
+            class="form-control "
+            id="inputApellido"
+            name="apellidos"
+            [(ngModel)]="apellidos "
+          />
+        </div>
+        <div>
+          <label for="inputEmail" class="form-label">Correo Electrónico</label>
+          <input
+            type="email"
+            required
+            class="form-control"
+            id="inputEmail"
+            name="correo"
+            [(ngModel)]="correo"
+          />
+        </div>
+        <div>
+          <label for="inputPassword" class="form-label">Contraseña</label>
+          <input
+            type="password"
+            required
+            class="form-control"
+            id="inputPassword"
+            name="contra"
+            [(ngModel)]="contra"
+          />
+          <div id="emailHelp" class="form-text mb-3">No comparta su contraseña</div>
+        </div>
+        <div>
+          <label for="inputID" class="form-label">Cédula</label>
+          <input type="text"  maxlength='10' name="cedula" required class="form-control" id="inputID" [(ngModel)]="cedula" />
+        </div>
+        <div class="col-md-6">
+          <label for="inputFecha" class="form-label"
+            >Fecha de Nacimiento</label
+          >
+          <input
+            type="date"
+            required
+            class="form-control"
+            id="inputFecha"
+            name="fecha"
+            [(ngModel)]="fecha_nacimiento"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="provincia" class="form-label">Provincia:</label>
+          <select class="form-select"
+          name="provincia" id="provincia" [(ngModel)]="valorProvincia" (change)="seleCiudad()">
+            <option [value]="provincia" *ngFor="let provincia of provincias;index as i">{{provincia}}</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="ciudad" class="form-label" >Ciudad</label>
+          <select name="ciudad" id="ciudad" class="form-select" [(ngModel)]="ciudad">
+            <option value="default" selected>Seleccione una ciudad</option>
+            <option [value]="ciudad" *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label for="idCelular" class="form-label">Número de Celular</label>
+          <input type="number" name="celular" required class="form-control" id="idCelular" [(ngModel)]="celular" />
+        </div>
+        <div class="col-sm-12">
+          <button type="submit" class="btn btn-warning">Registrarse</button>
+        </div>
+      </form>
+    </div>
+    <div class="col-4 mt-5">
+      <img
+        src="./assets/img/about.jpg"
+        alt="taller"
+      />
+      <h2 *ngIf="error">Es necesario llenar todos los datos</h2>
+      <h2 *ngIf="login">Se ha registrado correctamente, inicie sesión</h2>
+    </div>
+  </div>
+</div>
+<!-- End Registro -->
+<app-footer></app-footer>
+

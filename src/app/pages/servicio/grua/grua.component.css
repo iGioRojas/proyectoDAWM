@@ -1,0 +1,51 @@
+#map{
+  background-color: #3b3b3b;
+  height: 300px;
+  color: white;
+  text-align: center;
+  padding: 5em 0px;
+}
+.personal{
+  display: flex;
+  flex-direction: column;
+}
+
+.personal>label{
+  margin-top: 20px;
+}
+
+.vehiculo{
+  display: flex;
+  flex-direction: column;
+}
+
+.vehiculo>label{
+  margin-top: 20px;
+}
+.enviar, #area-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.enviar, #area-nav, .detalle-ubicacion, .celular, .selector-vehiculo{
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+#pedirvan, #enviar-form {
+  background-color: #A93226;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 3px 2px 5px black;
+  border: 0;
+}
+
+.text-detalles {
+  width: 100%;
+}
+ .detalles{
+   margin: 20px 0px;
+ }
+

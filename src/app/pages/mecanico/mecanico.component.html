@@ -1,0 +1,20 @@
+<app-nav></app-nav>
+<button class="btn btn-primary text-dark" (click)="cerrarSesion()">Cerrar Sesión</button>
+<div class="profile">
+  <h2 class="m-2">{{saludo}}</h2>
+  <img src="https://doodleipsum.com/700/avatar-2" class="img-fluid" />
+</div>
+<div class="text-center">
+  <h3 class="title">{{usuario.nombres}} {{usuario.apellidos}}</h3>
+  <h6>Mecánico</h6>
+  <div class="description">
+    <p class="px-4">
+      {{cantidadMantenimiento}}
+    </p>
+  </div>
+</div>
+<div class="matrix">
+  <a id="registroVehi" [routerLink]="['../registrarvehiculo']">Registrar Vehiculo<span><i class="bi bi-key-fill"></i></span></a>
+    <a id="registroRepa" [routerLink]="['../servicio-mantenimiento']"> Registrar Reparación<span><i class="bi bi-wrench"></i></span></a>
+</div>
+<app-footer></app-footer>

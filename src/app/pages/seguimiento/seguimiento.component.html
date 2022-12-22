@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Seguimiento</h1>
+    <p class="lead">Estado del mantenimiento de su vehículo.</p>
+  </div>
+</div>
+<!-- Seleccion -->
+<div class="selector-vehiculo">
+  <select
+    class="form-select"
+    aria-label="Disabled select example"
+    id="combobox"
+    (change)="onChange($event)"
+  >
+    <option selected>Selecciona el vehículo</option>
+    <option *ngFor="let item of autos" value="{{ item.id_auto }}">
+      {{ item.marca }}
+    </option>
+  </select>
+</div>
+<!-- end seleccion-->
+
+<!-- Tabla -->
+<div class="tabla-seguimiento">
+  <table class="table table-bordered align-middle">
+    <thead class="bg-danger text-light">
+      <tr>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Detalle de reparación</th>
+        <th scope="col">Mecánico</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let seg of seguimientos">
+        <th scope="row">{{ seg.fecha_actual }}</th>
+        <td>{{ seg.hora_actual }}</td>
+        <td>{{ seg.observacion_mecanico }}</td>
+        <td>
+          {{ seg.mecanico }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!--  End Tabla-->
+<app-footer></app-footer>
